@@ -1,0 +1,9 @@
+{% extends 'example.html' %}
+{% load i18n %}
+
+{% block content %}
+<h3>{% trans 'Biography' %}</h3>
+<div class="biography clearfix">
+{{object.content|safe}}
+</div>
+{% endblock %}

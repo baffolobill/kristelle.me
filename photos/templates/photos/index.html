@@ -1,0 +1,27 @@
+{% extends 'example.html' %}
+{% load i18n %}
+
+{% block content %}
+<h3>{% trans 'Photos' %}</h3>
+<table class="photo-albums clearfix">
+{% for album in albums %}
+  {% url photos-album album.id as album_url %}
+  {% if forloop.counter0|divisibleby:4 %}<tr>{% endif %}
+    <td>
+      <div class="photo-album__cover clearfix">
+	<a href="{{album_url}}" class="albumThumb clearfix">
+	  <span class="albumThumbWrap">
+	    <i style="background-image:url(https://graph.facebook.com/{{album.cover_photo}}/picture?type=album);"></i>
+	  </span>
+	</a>
+      </div>
+      <div class="photo-album__detail clearfix">
+	<a href="{{album_url}}" class="photo-album__title clearfix">{{album.name}}</a>
+      </div>
+    </td>
+  {% if forloop.counter|divisibleby:4 %}</tr>{% endif %}
+{% endfor %}
+{% if not albums|length|divisibleby:4 %}</tr>{% endif %}
+
+</table>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "example.html" %}
+{% load i18n %}
+
+{% block content %}
+<h3>{% trans 'Contacts' %}</h3>
+<div class="contacts clearfix">
+  {% include "contacts/_phone_number_list.html" %}
+  {% include "contacts/_email_address_list.html" %}
+  {% include "contacts/_instant_messenger_list.html" %}
+  {% include "contacts/_web_site_list.html" %}
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% load i18n %}
+
+{% if object.website_set.all %}
+<div id="contacts_web_sites">
+  <h3>{% trans "Web sites" %}</h3>
+  
+  <ul class="link_list">
+    {% for web in object.website_set.all %}
+    <li>
+      <a href="{{ web.url }}" class="url">{{ web.url }}</a>
+      <span class="alt">({{ web.get_location_display }})</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

@@ -1,0 +1,16 @@
+{% load i18n %}
+
+{% if object.emailaddress_set.all %}
+<div id="contant_emails">
+  <h3>{% trans "Email Addresses" %}</h3>
+  
+  <ul class="link_list">
+    {% for email in object.emailaddress_set.all %}
+    <li class="email">
+      <a href="mailto:{{ email.email_address }}" class="value">{{ email.email_address }}</a>
+      <span class="alt">(<span class="type">{{ email.get_location_display }}</span>)</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

@@ -1,0 +1,58 @@
+{% load navigation_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+
+  <title>{{ request.current_page.get_title }}</title>
+
+  <link href="{{MEDIA_URL}}css/addons.css" type="text/css" rel="stylesheet" />
+  <link href="{{MEDIA_URL}}css/layout.css" type="text/css" rel="stylesheet" />
+  <link href="{{MEDIA_URL}}css/template.css" type="text/css" rel="stylesheet" />
+
+
+<!--[if IE 7.0]>
+<style>
+.clearfix { display: inline-block; } /* IE7 xhtml */
+</style>
+<![endif]-->
+
+
+{% block header %}{% endblock %}
+</head>
+<body id="bd" class="fs3 page__home">
+  <a id="Top" name="Top"></a>
+
+  <div id="wrapper">
+    {% block body %}
+
+    <div id="mainnav" class="wrap">
+      <div class="main clearfix">
+	<ul id="cssmenu" class="clearfix">{{request|get_navigation}}</ul>
+
+	<ul id="langnav" class="clearfix"></ul>
+      </div>
+    </div>
+
+    <div id="container" class="wrap">
+      <div id="main" class="clearfix">
+	<div class="inner clearfix">
+	  {% block content %}{% endblock %}
+	</div>
+      </div>
+    </div>
+
+
+    {% endblock %}
+  </div>
+
+  <div id="footer" class="wrap">
+    <div class="main clearfix">
+    {% block footer %}
+    <div class="copyass">
+    Copyright  2011. All rights reserved.</div>
+    {% endblock %}
+    </div>
+  </div>
+</body>
+</html>
