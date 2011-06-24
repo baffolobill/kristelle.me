@@ -21,17 +21,22 @@ def fql(fql, args=None):
         file.close()
         
     if type(response) == dict and response.get("error_code"):
-        raise Exception(str(response["error_code"]), response["error_msg"])
+        return (response, response["error_msg"], False)
     
-    return response
+    return (response, None, True)
 
-def index(request):
+def get_videos():
     query = "SELECT vid,title,description,"\
         " thumbnail_link, embed_html"\
         " FROM video WHERE owner=%s"%FID
     
-    items = fql(query)
+    return fql(query)
+
+def index(request):
+    items, errors, success = fql(query)
     
-    ctx = RequestContext(request, {'videos':items})
+    ctx = RequestContext(request, {'videos':items,
+                                   'errors': errors,
+                                   'success': success})
     return shortcuts.render_to_response('videos/index.html', ctx)
 index.navigation = _('videos')
