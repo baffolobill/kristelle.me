@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load html5_biography %}
+
+<div id="page1" class="clearfix page-base page__biography" style="display:none;">
+  <div class="holder">
+    <div class="nav-arrows nav-arrows__left">
+      <a href="#arrow-left" onclick="return nav.arrow_left(this, '0');">&nbsp;</a></div>
+    <div class="nav-arrows nav-arrows__right">
+      <a href="#arow-right" onclick="return nav.arrow_right(this, '2');">&nbsp;</a></div>
+    <div class="page__logo">
+      <span class="logo__text clearfix">kristelle.me</span>
+      <span class="logo__subtext clearfix">&mdash; {% trans 'biography' %} &mdash;</span>
+    </div>
+    <div class="page__wrapper biography main">
+      <div class="page__content jscrollpane">
+	<div class="inner clearfix">
+	{% html5_biography_item %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+

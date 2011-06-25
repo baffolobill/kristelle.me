@@ -1,0 +1,63 @@
+.jspTrack {
+	background: #f8f8f8;
+    box-shadow: inset 0px 0px 12px #ccc;
+    -moz-box-shadow: inset 0px 0px 12px #ccc;
+    -webkit-box-shadow: inset 0px 0px 12px #ccc;
+}
+
+.jspHorizontalBar,
+.jspVerticalBar,
+.jspTrack {
+    width: 12px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+}
+
+.jspDrag {
+    border: 1px solid #655554;
+	background: transparent;/* #574948;*/
+
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+    
+    box-shadow: inset 0px 0px 12px #655554;
+    -moz-box-shadow: inset 0px 0px 12px #655554;
+    -webkit-box-shadow: inset 0px 0px 12px #655554;
+}
+
+.jspTrack .jspActive,
+.jspTrack .jspHover,
+.jspDrag:hover
+{
+	background: #8F716F;
+}
+
+
+.jspArrow
+{	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.jspVerticalBar>.jspActive,
+.jspArrow:hover
+{
+	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
+}
+
+.jspVerticalBar>.jspDisabled,
+.jspVerticalBar>.jspDisabled:hover,
+.jspHorizontalBar>.jspDisabled,
+.jspHorizontalBar>.jspDisabled:hover
+{
+	background-color: transparent;
+	background-image: url('../image/ui-icons_888888_256x240.png');
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 15px;
+}

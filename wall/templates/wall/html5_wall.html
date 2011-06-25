@@ -1,0 +1,20 @@
+{% load i18n %}
+
+
+<div id="wall-tabs" class="clearfix">
+  <ul>
+    <li><a href="#facebook_comments">Facebook</a></li>
+    <li><a href="#vkontakte_comments">{% trans 'VKontakte' %}</a></li>
+  </ul>
+  
+  <div id="facebook_comments">
+    <div id="fb-root"></div>
+    <fb:comments href="example.com" num_posts="8" width="678"></fb:comments>
+
+  </div>
+
+  <div id="vkontakte_comments">
+    <div id="vk_comments"></div>
+  </div>
+
+</div>

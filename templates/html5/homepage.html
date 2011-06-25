@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load html5_news %}
+
+<div id="page0" class="clearfix page-base page__home">
+  <div class="holder">
+    <div class="nav-arrows nav-arrows__left">
+      <a href="#arrow-left" onclick="return nav.arrow_left(this,'6');">&nbsp;</a></div>
+    <div class="nav-arrows nav-arrows__right">
+      <a href="#arow-right" onclick="return nav.arrow_right(this,'1');">&nbsp;</a></div>
+    <div class="page__logo">
+      <span class="logo__text clearfix">kristelle.me</span>
+      <span class="logo__subtext clearfix">&mdash;  news  &mdash;</span>
+    </div>
+    <div class="page__wrapper news main">
+      <div class="page__content jscrollpane">
+	<div class="inner clearfix">
+	{% html5_news_items %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+

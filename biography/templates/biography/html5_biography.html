@@ -1,0 +1,9 @@
+{% load i18n %}
+
+{% if biography %}
+<div class="biography__item clearfix">
+  {{biography.content|safe}}
+</div>
+{% else %}
+<div class="clearfix biography__empty">{% trans 'No biography yet.' %}</div>
+{% endif %}
