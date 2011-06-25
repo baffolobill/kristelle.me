@@ -13,6 +13,17 @@ Photos.prototype = {
 	this.album_photos_page = null;
 	this.animate(this.container, {'direction':'left'});
     },
+    popup: function(obj, album_id){
+	var self = this;
+	var url = jQuery(obj).attr('href');
+	var album_group = 'group'+album_id;
+
+	//console.log('colorbox url: '+url);
+	console.log('colorbox group: '+album_group);
+	jQuery.colorbox({href:url, rel:album_group});
+
+	return false;
+    },
     get_album_photos: function(obj, album_id){
 	var self = this;
 	var url = jQuery(obj).attr('href').substr(1);
@@ -48,8 +59,11 @@ Photos.prototype = {
 		fadeOut:0,
 		overlayCSS:{backgroundColor:'#fff'}
 	    });
+	jQuery('.page__wrapper.photos>.context-loader').show();
     },
     unblock: function(){
+	jQuery('.page__wrapper.photos>.context-loader').hide();
+
 	jQuery(this.settings.blockId).unblock();
     },
     cache_and_show: function(html){
@@ -77,6 +91,10 @@ Photos.prototype = {
     cache: function(html){
 	var _c = jQuery('<div id="album-photos-'+this.album_id+'" class="album-photos-cache-block clearfix" style="display:none;"></div>').html(html);
 	this.cache_container.append(_c);
+	this.bind(_c);
+    },
+    bind: function(container){
+	jQuery('a.album__image__button', container).colorbox({'rel':'group'+this.album_id});
     },
     get_cache: function(album_id){
 	return this.cache_container.children('#album-photos-'+album_id);

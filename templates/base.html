@@ -26,13 +26,11 @@
 
   <link href="{{MEDIA_URL}}css/jqueryui/ui-lightness/lightness.css" type="text/css" rel="stylesheet"/>
   <link href="{{MEDIA_URL}}css/wall/default.css" type="text/css" rel="stylesheet" />
+{%comment%}
   <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?32"></script>
   <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-{%comment%}
-  <link href="{{MEDIA_URL}}css/layout.css" type="text/css" rel="stylesheet" />
-  <link href="{{MEDIA_URL}}css/template.css" type="text/css" rel="stylesheet" />
 {%endcomment%}
-<link  href="http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,bold,bolditalic&v1" rel="stylesheet" type="text/css" />
+  <link  href="http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,bold,bolditalic&v1" rel="stylesheet" type="text/css" />
 
 
 <!--[if IE 7.0]>
@@ -47,10 +45,12 @@
 jQuery(document).ready(function($){
   $('a.video__button').colorbox({inline:true, rel:'group0'});
   $('div.jscrollpane').jScrollPane({'autoReinitialise':true});
+
   $('#wall-tabs').tabs();
-  VK.init({apiId:1000000, onlyWidgets: true});
-  VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
+//  VK.init({apiId:1000000, onlyWidgets: true});
+//  VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
 });
+
 </script>
 
 </head>

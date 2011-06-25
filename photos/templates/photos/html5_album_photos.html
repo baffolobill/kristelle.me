@@ -1,10 +1,5 @@
 {% load i18n %}
 
-<script type="text/javascript">
-jQuery(document).ready(function($){
-  $('a.album__image__button').colorbox({rel:"group{{album.id}}"});
-});
-</script>
 
 
 <a href="#back" onclick="return photos.back(this);">{% trans 'back' %}</a>
@@ -13,17 +8,19 @@ jQuery(document).ready(function($){
 
 <table class="album__table clearfix">
 {% for item in images %}
-  {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
+  {% if forloop.counter0|divisibleby:4 %}<tr>{% endif %}
     <td>
       <div class="album__image clearfix">
 	<a href="{{item.source}}" 
-	   class="album__image__thumb album__image__button clearfix" rel="group{{album.id}}">
+	   {# onclick="return photos.popup(this, '{{album.id}}');" #}
+	   class="album__image__thumb album__image__button clearfix" 
+	   rel="group{{album.id}}">
 	  <i style="background-image:url({{item.picture}});"></i>
 	</a>
       </div>
     </td>
-  {% if forloop.counter|divisibleby:3 %}</tr>{% endif %}
+  {% if forloop.counter|divisibleby:4 %}</tr>{% endif %}
 {% endfor %}
-{% if not album|length|divisibleby:3 %}</tr>{% endif %}
+{% if not album|length|divisibleby:4 %}</tr>{% endif %}
 </table>
 

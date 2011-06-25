@@ -1,7 +1,8 @@
 function Navigation(opts){
     var settings = {
 	'pageIdPrefix': 'page',
-	'pageBaseClass': 'page-base'
+	'pageBaseClass': 'page-base',
+	'spped': 800
     };
 
     this.settings = jQuery.extend(settings, opts);
@@ -32,7 +33,7 @@ Navigation.prototype = {
 	this.current_page.hide();
 
 	this.hide_arrows(this.next_page);
-	this.next_page.show('slide', opts, 1000,
+	this.next_page.show('slide', opts, self.settings.speed,
 				function(){
 				    self.show_arrows(self.next_page);
 				});

@@ -279,7 +279,11 @@ input, select, textarea, .inputbox {
 
 
 /** photos **/
-.page__wrapper.photos {}
+.page__wrapper.photos {
+    width: 60%;
+    max-width: 700px;
+    min-width: 300px;
+}
 .page__wrapper.photos .page__content {}
 .page__photos .holder {
     background: transparent url(../images/html5/photos_bg.jpg) no-repeat;
@@ -294,7 +298,7 @@ input, select, textarea, .inputbox {
     padding: 5px;
     margin: 0;
     vertical-align: top;
-    text-align: center;
+    width: 33%;
 }
 .photo-album__cover {
     float: left;
@@ -366,8 +370,26 @@ input, select, textarea, .inputbox {
     height: 111px;
     background-color: #eee;
     background-position: 50% 25%;
-    background-repeat: no-repat;
+    background-repeat: no-repeat;
     display: block;
+}
+.context-loader {
+    background: #eee url(../images/html5/metabox_loader.gif) no-repeat;
+    background-position: 10px 50%;
+    border: 1px solid #666;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    color: #666;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -75px;
+    padding: 10px 10px 10px 30px;
+    position: absolute;
+    top: 0px;
+    width: 110px;
+    z-index: 1001;
 }
 
 

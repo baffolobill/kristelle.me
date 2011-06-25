@@ -12,6 +12,7 @@
       <span class="logo__subtext clearfix">&mdash; {% trans 'photos' %} &mdash;</span>
     </div>
     <div class="page__wrapper photos main">
+      <div class="context-loader" style="display:none;">{% trans 'Sending Request...' %}</div>
       <div class="page__content jscrollpane">
 	<div class="inner clearfix">
 	{% html5_albums_items %}
