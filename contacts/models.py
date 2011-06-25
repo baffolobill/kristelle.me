@@ -33,14 +33,14 @@ class PhoneNumber(models.Model):
     person = models.ForeignKey(Person)
 	
     phone_number = models.CharField(_('number'), max_length=50)
-    location = models.CharField(_('location'), max_length=6,
-				choices=PHONE_LOCATION_CHOICES, default='work')
+    #location = models.CharField(_('location'), max_length=6,
+#				choices=PHONE_LOCATION_CHOICES, default='work')
 	
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
 	
     def __unicode__(self):
-        return u"%s (%s)" % (self.phone_number, self.location)
+        return u"%s" % self.phone_number
 	
     class Meta:
         db_table = 'contacts_phone_numbers'
@@ -57,14 +57,14 @@ class EmailAddress(models.Model):
     person = models.ForeignKey(Person)
 	
     email_address = models.EmailField(_('email address'))
-    location = models.CharField(_('location'), max_length=6,
-				choices=LOCATION_CHOICES, default='work')
+    #location = models.CharField(_('location'), max_length=6,
+    #   choices=LOCATION_CHOICES, default='work')
     
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     
     def __unicode__(self):
-        return u"%s (%s)" % (self.email_address, self.location)
+        return u"%s" % self.email_address
 	
     class Meta:
         db_table = 'contacts_email_addresses'
@@ -82,15 +82,15 @@ IM_SERVICE_CHOICES = (
     ('qq', 'QQ'),
     ('sametime', 'Sametime'),
     ('gadu-gadu', 'Gadu-Gadu'),
-    ('google-talk', 'Google Talk'),
+    ('gtalk', 'Google Talk'),
     ('other', _('Other'))
 )
 
 class InstantMessenger(models.Model):
     person = models.ForeignKey(Person)	
     im_account = models.CharField(_('im account'), max_length=100)
-    location = models.CharField(_('location'), max_length=6,
-				choices=LOCATION_CHOICES, default='work')
+    #location = models.CharField(_('location'), max_length=6,
+#				choices=LOCATION_CHOICES, default='work')
     service = models.CharField(_('service'), max_length=11,
 			       choices=IM_SERVICE_CHOICES, default='jabber')
     
@@ -98,25 +98,33 @@ class InstantMessenger(models.Model):
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     
     def __unicode__(self):
-        return u"%s (%s)" % (self.im_account, self.location)
+        return u"%s" % self.im_account
 	
     class Meta:
         db_table = 'contacts_instant_messengers'
 	verbose_name = 'instant messenger'
 	verbose_name_plural = 'instant messengers'
 
+WEB_SERVICE_CHOICES = (
+    ('website', _('Web Site')),
+    ('facebook', _('Facebook.com')),
+    ('vkontakte', _('Vkontakte.ru')),
+    ('myspace', _('MySpace.com')),
+)
+
 class WebSite(models.Model):
     person = models.ForeignKey(Person)
 
     url = models.URLField(_('URL'))
-    location = models.CharField(_('location'), max_length=6,
-				choices=LOCATION_CHOICES, default='work')
-
+    #location = models.CharField(_('location'), max_length=6,
+#				choices=LOCATION_CHOICES, default='work')
+    service = models.CharField(_('service'), max_length=11,
+			       choices=WEB_SERVICE_CHOICES, default='website')
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
 	
     def __unicode__(self):
-        return u"%s (%s)" % (self.url, self.location)
+        return u"%s" % self.url
 	
     class Meta:
         db_table = 'contacts_web_sites'

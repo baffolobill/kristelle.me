@@ -8,7 +8,7 @@
     {% for web in object.website_set.all %}
     <li>
       <a href="{{ web.url }}" class="url">{{ web.url }}</a>
-      <span class="alt">({{ web.get_location_display }})</span>
+{#      <span class="alt">({{ web.get_location_display }})</span>#}
     </li>
     {% endfor %}
   </ul>

@@ -402,30 +402,42 @@ input, select, textarea, .inputbox {
 
 
 /** contacts **/
-.page__wrapper.contacts {
-    background: url(../images/html5/transparent_tile.png);
-    top: 150px;
-    bottom: 50px;
-    left: 80px;
-    width: 550px;
-    padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-box-shadow: 0 0 5px #888;
-    -webkit-box-shadow: 0 0 5px #888;
-    box-shadow: 0 0 5px #888;
-}
-.page__wrapper.contacts .page__content {
-    background: #f8f8f8;
-    width: 530px;
-    height: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-}
+.page__wrapper.contacts {}
+.page__wrapper.contacts .page__content {}
 .page__contacts .holder {
     background: transparent url(../images/html5/contacts_bg.jpg) no-repeat;
     background-position: 100% 100%;
+}
+.contacts__list {}
+.contacts__list li {
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.contacts__list .tel {
+    background-image: url(../images/html5/social/tel.png);
+}
+.contacts__list .email {
+    background-image: url(../images/html5/social/email.png);
+}
+.contacts__list .icq {
+    background-image: url(../images/html5/social/icq.png);
+}
+.contacts__list .jabber {
+    background-image: url(../images/html5/social/jabber.png);
+}
+.contacts__list .twitter {
+    background-image: url(../images/html5/social/twitter.png);
+}
+.contacts__list .website {
+    background-image: url(../images/html5/social/website.png);
+}
+.contacts__list .gtalk {
+    background-image: url(../images/html5/social/gtalk.png);
+}
+.contacts__list .vkontakte {
+    background-image: url(../images/html5/social/vkontakte.png);
+}
+.contacts__list .facebook {
+    background-image: url(../images/html5/social/facebook.png);
 }
