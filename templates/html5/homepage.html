@@ -3,7 +3,7 @@
 
 {% get_available_languages as LANGUAGES %}
 
-<div id="page-home" class="clearfix page-base page__home">
+<div id="page-home" class="clearfix page-base page__home" style="display:none;">
   <div class="holder">
     <div class="nav-lang">
       <a href="/ru{% url pages-root %}" class="nav-lang__item {% if 'ru' == LANGUAGE_CODE %}current{%endif%}"

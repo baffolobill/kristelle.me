@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,24 +46,78 @@
 {% block header %}{% endblock %}
 
 <script type="text/javascript">
+var MadLoader = 27;
+var WellDone = false;
+
+function MadLoading(){
+  var e = document.getElementById('percents');
+  if (e) {
+    if (MadLoader < 303) MadLoader = MadLoader + 1;
+      
+    e.innerHTML = Math.floor(MadLoader) + '%';
+    e.style.fontSize = Math.floor(MadLoader / 303 * 60 + 12 * 1) + 'px';
+
+    if (WellDone) return;
+
+    e.style.display = 'inline';
+  }
+  setTimeout(MadLoading, 50);
+}
+
+function FuckedIECheck(){
+  if (jQuery.browser.msie && jQuery.browser.version < 7){
+    jQuery('#percents').hide();
+    jQuery('#ie6sucks').show();
+    return false;
+  }
+  return true;
+}
+
 jQuery(document).ready(function($){
+ if (FuckedIECheck()){
   $('a.video__button').colorbox({inline:true, rel:'group0'});
   $('div.jscrollpane').jScrollPane({'autoReinitialise':true});
 
   $('#wall-tabs').tabs();
-//  VK.init({apiId:1000000, onlyWidgets: true});
-//  VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
 
+  $('#pageintro').hide();
+  WellDone = true;
   var active_page_id = Link.getPathnameFromHashOfCurrentUrl('page-home');
   nav.goto_page(active_page_id);
+
+  VK.init({apiId:1000000, onlyWidgets: true});
+  VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
+ }
 });
 
 </script>
 
 </head>
 <body id="bd" class="fs3">
-
   <div id="wrapper"></div>
+
+  <div class="page-base" id="pageintro">
+    <div class="holder">
+      <div style="position: absolute; left: 50px; top: 70px;">
+	<span class="logo__text clearfix">kristelle.me</span>
+	<span style="display: none;" id="percents">27%</span>
+
+	<noscript>{% trans "Emmm. It seems that your browser doesn't support JavaScript. It's terribly :(" %}</noscript>
+
+	<div style="display: none;" id="ie6sucks">
+	  {% blocktrans %}
+	  Internet Explorer, which you're using was released in 2001.
+	  It's time to update browser.
+	  {% endblocktrans %}
+	</div>
+
+	<script type="text/javascript">
+          setTimeout(MadLoading, 50);
+        </script>
+      </div>
+    </div>
+  </div>
+
 
   {% include 'html5/homepage.html' %}
 
@@ -74,5 +130,6 @@ jQuery(document).ready(function($){
   {% include 'html5/wall.html' %}
   {% include 'html5/contacts.html' %}
 {% endcomment%}
+
 </body>
 </html>
