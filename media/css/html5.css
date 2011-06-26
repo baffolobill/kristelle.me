@@ -517,3 +517,30 @@ input, select, textarea, .inputbox {
 .contacts__list .facebook {
     background-image: url(../images/html5/social/facebook.png);
 }
+
+/* footer menu */
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 15px;
+    left: 35%;
+}
+.footer-menu__items {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-menu__items li {
+    float: left;
+    padding: 4px 10px;
+    line-height: 1;
+}
+.footer-menu__items li.first { padding-left: 0; }
+.footer-menu__items li.last { padding-right: 0; }
+
+.footer-menu__items li a,
+.footer-menu__items li a:hover {
+    color: #f8f8f8;
+}

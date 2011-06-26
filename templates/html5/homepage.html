@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load html5_news %}
+{% load html5_menu %}
 
 {% get_available_languages as LANGUAGES %}
 
@@ -27,6 +28,9 @@
 	</div>
       </div>
     </div>
+
+    {% footer_menu %}
+
   </div>
 </div>
 

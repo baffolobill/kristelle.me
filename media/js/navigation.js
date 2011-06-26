@@ -18,6 +18,7 @@ Navigation.prototype = {
 	if (_p.length && _p.hasClass('page-base')){
 	    jQuery('.page-base').hide();
 	    _p.show();
+	    Link.setUrlHash(page_id);
 	}
     },
     arrow_left: function(obj, page_id){
