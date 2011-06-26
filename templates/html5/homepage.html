@@ -3,7 +3,7 @@
 
 {% get_available_languages as LANGUAGES %}
 
-<div id="page0" class="clearfix page-base page__home">
+<div id="page-home" class="clearfix page-base page__home">
   <div class="holder">
     <div class="nav-lang">
       <a href="/ru{% url pages-root %}" class="nav-lang__item {% if 'ru' == LANGUAGE_CODE %}current{%endif%}"
@@ -13,12 +13,12 @@
 	 {% if 'en' == LANGUAGE_CODE %} title="{% trans 'Current language' %}"{%endif%}>English</a>
     </div>
     <div class="nav-arrows nav-arrows__left">
-      <a href="#arrow-left" onclick="return nav.arrow_left(this,'6');">&nbsp;</a></div>
+      <a href="#arrow-left" onclick="return nav.arrow_left(this);">&nbsp;</a></div>
     <div class="nav-arrows nav-arrows__right">
-      <a href="#arow-right" onclick="return nav.arrow_right(this,'1');">&nbsp;</a></div>
+      <a href="#arow-right" onclick="return nav.arrow_right(this);">&nbsp;</a></div>
     <div class="page__logo">
       <span class="logo__text clearfix">kristelle.me</span>
-      <span class="logo__subtext clearfix">&mdash;  news  &mdash;</span>
+      <span class="logo__subtext clearfix">&mdash; news &mdash;</span>
     </div>
     <div class="page__wrapper news main">
       <div class="page__content jscrollpane">
