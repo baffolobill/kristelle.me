@@ -23,8 +23,6 @@ Photos.prototype = {
 	var url = jQuery(obj).attr('href');
 	var album_group = 'group'+album_id;
 
-	//console.log('colorbox url: '+url);
-	console.log('colorbox group: '+album_group);
 	jQuery.colorbox({href:url, rel:album_group});
 
 	return false;
@@ -43,7 +41,7 @@ Photos.prototype = {
 			   self.unblock();
 			   if (data.error){
 			       // show error
-			       console.log(data.error);
+			       messenger.error(data.error);
 			   } else if (data.html){
 			       self.cache_and_show(data.html);
 			   }
