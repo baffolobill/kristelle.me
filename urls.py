@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     url(r'^biography/$', 'biography.views.biography', {}, 'biography-index'),
     url(r'^contacts/$', 'contacts.views.detail', {}, 'contacts-detail'),
 
+    url(r'^contact-us/$', 'contacts.views.contact_us', {}, 'contact-us'),
     url(r'^html5/$', 'django.views.generic.simple.direct_to_template', 
         {'template':'base.html'}, 'pages-root'),
 

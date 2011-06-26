@@ -6,10 +6,12 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
+EMAIL_DONT_REPLY = 'dont-replay@kristelle.me'
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
-MANAGERS = ADMINS
+MANAGERS = (
+    ('Test Manager', 'manager@kristelle.me'),
+)
 
 DATABASES = {
     'default': {
