@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^contacts/$', 'contacts.views.detail', {}, 'contacts-detail'),
 
     url(r'^html5/$', 'django.views.generic.simple.direct_to_template', 
-        {'template':'base.html'}),
+        {'template':'base.html'}, 'pages-root'),
 )
 
 #urlpatterns += staticfiles_urlpatterns()

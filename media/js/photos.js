@@ -1,5 +1,8 @@
 function Photos(opts){
-    var settings = {'blockId': '.page__wrapper.photos'};
+    var settings = {
+	'blockId': '.page__wrapper.photos',
+	'speed': 700
+    };
     this.settings = jQuery.extend(settings, opts);
     this.album_id = null;
     this.container = null;
@@ -79,7 +82,7 @@ Photos.prototype = {
     animate: function(obj, opts){
 	var self = this;
 
-	obj.show('slide', opts, 1000);
+	obj.show('slide', opts, self.settings.speed);
     },
     is_cached: function(){
 	var _c = this.cache_container.children('#album-photos-'+this.album_id);

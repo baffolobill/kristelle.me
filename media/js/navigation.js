@@ -39,10 +39,10 @@ Navigation.prototype = {
 				});
     },
     hide_arrows: function(obj){
-	obj.find('.nav-arrows').hide();
+	obj.find('.nav-arrows,.nav-lang').hide();
     },
     show_arrows: function(obj){
-	obj.find('.nav-arrows').show();
+	obj.find('.nav-arrows,.nav-lang').show();
     }
 };
 nav = new Navigation();

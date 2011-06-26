@@ -1,8 +1,9 @@
 {% load i18n %}
 
-
-
-<a href="#back" onclick="return photos.back(this);">{% trans 'back' %}</a>
+<div class="clearfix photos__back">
+  <a href="#back" onclick="return photos.back(this);" 
+     class="photos__back_button clearfix">{% trans 'Back to albums' %}</a>
+</div>
 <h3>{{album.name}}</h3>
 {% if album.description %}<span class="clearfix">{{album.description}}</span>{% endif %}
 

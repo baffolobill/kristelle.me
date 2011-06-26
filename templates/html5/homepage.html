@@ -1,8 +1,17 @@
 {% load i18n %}
 {% load html5_news %}
 
+{% get_available_languages as LANGUAGES %}
+
 <div id="page0" class="clearfix page-base page__home">
   <div class="holder">
+    <div class="nav-lang">
+      <a href="/ru{% url pages-root %}" class="nav-lang__item {% if 'ru' == LANGUAGE_CODE %}current{%endif%}"
+	 {% if 'ru' == LANGUAGE_CODE %} title="{% trans 'Current language' %}"{%endif%}>{% trans 'Russian' %}</a>
+      <span class="nav-lang__separator">&nbsp;|&nbsp;</span>
+      <a href="/en{% url pages-root %}" class="nav-lang__item {% if 'en' == LANGUAGE_CODE %}current{%endif%}"
+	 {% if 'en' == LANGUAGE_CODE %} title="{% trans 'Current language' %}"{%endif%}>English</a>
+    </div>
     <div class="nav-arrows nav-arrows__left">
       <a href="#arrow-left" onclick="return nav.arrow_left(this,'6');">&nbsp;</a></div>
     <div class="nav-arrows nav-arrows__right">
