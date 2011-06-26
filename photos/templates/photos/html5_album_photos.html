@@ -1,7 +1,9 @@
 {% load i18n %}
 
 <div class="clearfix photos__back">
-  <a href="#back" onclick="return photos.back(this);" 
+  <a href="#back" 
+     title="{% trans 'Back to albums' %}"
+     onclick="return photos.back(this);" 
      class="photos__back_button clearfix">{% trans 'Back to albums' %}</a>
 </div>
 <h3>{{album.name}}</h3>

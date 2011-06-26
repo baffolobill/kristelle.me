@@ -32,6 +32,8 @@ urlpatterns = patterns('',
 
     url(r'^html5/$', 'django.views.generic.simple.direct_to_template', 
         {'template':'base.html'}, 'pages-root'),
+
+    url(r'^music/album/(?P<album_id>\d+)/tracklist/$', 'music.views.album_tracks', {}, 'music-album-tracklist'),
 )
 
 #urlpatterns += staticfiles_urlpatterns()

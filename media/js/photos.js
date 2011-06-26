@@ -15,6 +15,8 @@ Photos.prototype = {
 	this.album_photos_page.hide();
 	this.album_photos_page = null;
 	this.animate(this.container, {'direction':'left'});
+
+	return false;
     },
     popup: function(obj, album_id){
 	var self = this;

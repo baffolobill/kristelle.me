@@ -11,6 +11,7 @@ html, body {
     display: block;
 }
 
+
 body.fs1 { font-size: 10px; }
 body.fs2 { font-size: 11px; }
 body.fs3 { font-size: 12px; }
@@ -72,13 +73,32 @@ input, select, textarea, .inputbox {
 .inputbox:hover, .inputbox:focus { background: #ffffcc; }
 
 #wrapper { 
-    background: #574948; 
+    background: url(../images/html5/background-tile.png) repeat;
     width: 100%;
     height: 100%;
 }
 
 .page__wrapper .inner { padding: 15px; }
 
+/* intro page */
+.page-intro {
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-intro .holder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* page base */
 .page-base {
     height: 100%;
     left: 0px;
@@ -279,13 +299,151 @@ input, select, textarea, .inputbox {
 }
 
 /** music **/
-.page__wrapper.music {}
+.page__wrapper.music { min-width: 580px; }
 .page__wrapper.music .page__content {}
 .page__music .holder {
     background: transparent url(../images/html5/music_bg.jpg) no-repeat;
     background-position: 100% 100%;
 }
+.music-block {
+    overflow: hidden;
+    float: left;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+.music-albums {}
 
+.music-album {
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0 0 10px;
+    position: relative;
+    clear: both;
+}
+.music-album.first { margin-left: 0; }
+.music-album.last { margin-bottom: 0; }
+
+.music-album__detail {
+    height: 90px;
+    padding: 0 6px 0 0;
+    margin: 0;
+    float: left;
+    background: #eaeaea;
+    border-right: 1px solid #c9c9c9;
+}
+.album__cover {
+    overflow: hidden;
+    display: block;
+    height: 75px;
+    width: 75px;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 1px;
+    left: 5px;
+    top: 5px;
+    position: absolute;
+    vertical-align: middle;
+}
+.album__cover img { width: 75px; }
+
+.album__text {
+    padding-left: 90px;
+}
+.album__title {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 5px;
+    width: 135px;
+}
+.album__title:hover {}
+.album__year {
+    font-size: 11px;
+}
+.album__tracks {
+    font-size: 11px;
+}
+
+
+.music-album__tracklist {
+    float: left;
+    padding: 0;
+    margin: 0 0 0 5px;
+    position: relative;
+    width: 300px;
+    
+}
+.tracklist__track {
+    padding: 0;
+    margin: 0 0 2px 0;
+    position: relative;
+    height: 25px;
+    padding-left: 25px;
+    background: #eaeaea;
+    overflow: hidden;
+    display: block;
+}
+.track__play {
+    display: block;
+    cursor: pointer;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    left: 5px;
+    position: absolute;
+    top: 3px;
+    background: url(../images/html5/player_play_stop_buttons.png) no-repeat;
+    background-position: 0 0;
+}
+.music-track.active .track__play {
+    background-position: -19px 0px;
+}
+.track__title {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    font-size: 13px;
+    padding-left: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.track__meta { display: none !important; }
+
+/*** single tracks ***/
+.music-single-tracks {
+    margin: 1.5em 0 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    width: 540px;
+}
+.music-single-tracks span.title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 0.5em;
+    margin-bottom: 0.2em;
+    border-bottom: 1px solid #c9c9c9;
+}
+.music-single-track {
+    position: relative;
+    float: left;
+    clear: both;
+    margin: 0 0 2px 0;
+    padding: 0;
+
+    height: 25px;
+    padding-left: 25px;
+    background: #eaeaea;
+    overflow: hidden;
+    width: 515px;
+}
+.music-single-track.first {}
+.music-single-track.last { margin-bottom: 0; }
+
+.music-track.hover { background: #cacaca; }
+.music-track.active { background: #c9c9c9; }
 
 /** videos **/
 .page__wrapper.videos {}
@@ -431,10 +589,12 @@ input, select, textarea, .inputbox {
     width: 110px;
     z-index: 1001;
 }
+.music__back,
 .photos__back {
     border-bottom: 1px solid #c9c9c9;
     margin: 0 0 10px;
 }
+.music__back_button,
 .photos__back_button {
     display: block;
     background: url(../images/html5/back-arrow.png) no-repeat;
@@ -524,7 +684,7 @@ input, select, textarea, .inputbox {
     padding: 0;
     position: absolute;
     bottom: 15px;
-    left: 35%;
+    left: 130px;
 }
 .footer-menu__items {
     display: block;

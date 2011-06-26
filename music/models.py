@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.utils.translation import ugettext as _
 from filebrowser.fields import FileBrowseField
@@ -12,6 +13,8 @@ class Album(models.Model):
                            extensions=['.zip',], blank=True, null=True,
                            help_text=_('zipped album'))
     ordering = models.IntegerField(_('ordering'), max_length=5, default=1)
+    year = models.IntegerField(_('year'), max_length=4, 
+                               default=datetime.datetime.now().strftime('%Y'))
     created = models.DateTimeField(auto_now_add=True, editable=False)
     updated = models.DateTimeField(auto_now=True, editable=False)
     published = models.BooleanField(_('published'), default=False)
@@ -19,9 +22,14 @@ class Album(models.Model):
     def __unicode__(self):
         return self.title
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('music.views.album_tracks', [str(self.pk)])
+
     class Meta:
         verbose_name = _('album')
         verbose_name_plural = _('albums')
+        ordering = ('ordering', )
 
 class Track(models.Model):
     album = models.ForeignKey(Album, null=True, blank=True)

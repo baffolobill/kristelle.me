@@ -7,6 +7,7 @@
 
   <title>{% block title %}{{ request.current_page.get_title }}{% endblock %}</title>
 
+  <script src="{{MEDIA_URL}}js/jquery.min.js" type="text/javascript"></script>
   <link href="{{MEDIA_URL}}css/addons.css" type="text/css" rel="stylesheet" />
   <link href="{{MEDIA_URL}}css/html5.css" type="text/css" rel="stylesheet" />
   <link href="{{MEDIA_URL}}js/jscrollpane/css/jquery.jscrollpane.css" type="text/css" rel="stylesheet" />
@@ -54,7 +55,7 @@ function MadLoading(){
 <body id="bd" class="fs3">
   <div id="wrapper"></div>
 
-  <div class="page-base" id="pageintro">
+  <div class="page-intro" id="pageintro">
     <div class="holder">
       <div style="position: absolute; left: 50px; top: 70px;">
 	<span class="logo__text clearfix">kristelle.me</span>
@@ -76,6 +77,7 @@ function MadLoading(){
     </div>
   </div>
 
+  {% include 'html5/player.html' %}
 
   {% include 'html5/homepage.html' %}
 
@@ -91,7 +93,7 @@ function MadLoading(){
   
 
 </body>
-  <script src="{{MEDIA_URL}}js/jquery.min.js" type="text/javascript"></script>
+
   <script src="{{MEDIA_URL}}js/jqueryui.min.js" type="text/javascript"></script>
   <script src="{{MEDIA_URL}}js/jquery.blockUI.js" type="text/javascript"></script>
 
@@ -104,6 +106,9 @@ function MadLoading(){
 
   <script src="{{MEDIA_URL}}js/colorbox/jquery.colorbox-min.js" type="text/javascript"></script>
   <script src="{{MEDIA_URL}}js/photos.js" type="text/javascript"></script>
+  <script src="{{MEDIA_URL}}js/jplayer/jquery.jplayer.min.js" type="text/javascript"></script>
+  <script src="{{MEDIA_URL}}js/music.js" type="text/javascript"></script>
+
 
 <script type="text/javascript">
 function FuckedIECheck(){
@@ -126,6 +131,13 @@ jQuery(document).ready(function($){
   WellDone = true;
   var active_page_id = Link.getPathnameFromHashOfCurrentUrl('page-home');
   nav.goto_page(active_page_id);
+
+  // init player
+  $('#player-block').jPlayer({
+    swfPath: "{{MEDIA_URL}}/js/jplayer"
+  }).bind($.jPlayer.event.play, function(){
+    $(this).jPlayer("pauseOthers");
+  });
 
   VK.init({apiId:1000000, onlyWidgets: true});
   VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
