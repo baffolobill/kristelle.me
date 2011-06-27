@@ -198,8 +198,8 @@ NAVIGATION_SECTIONS = (
     '/contacts/',
 )
 
-import filebrowser
-STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'media'),)
+#import filebrowser
+#STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'media'),)
 
 TINYMCE_FILEBROWSER = True
 TINYMCE_DEFAULT_CONFIG = {

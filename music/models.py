@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from django.conf import settings
 from django.utils.translation import ugettext as _
 from filebrowser.fields import FileBrowseField
 
@@ -34,7 +35,6 @@ class Album(models.Model):
 class Track(models.Model):
     album = models.ForeignKey(Album, null=True, blank=True)
     title = models.CharField(_('title'), max_length=255)
-    #file = models.FileField(_('file'), upload_to='music/tracks', max_length=255)
     file = FileBrowseField(_('file'), max_length=255, directory='music/tracks',
                             extensions=['.mp3'])
     ordering = models.IntegerField(_('ordering'), max_length=5)
@@ -43,6 +43,12 @@ class Track(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        if settings.DEBUG:
+            return 'http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3'
+        return self.file.url
+
 
     def save(self, *args, **kwargs):
         model = self.__class__

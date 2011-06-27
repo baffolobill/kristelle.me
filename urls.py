@@ -35,14 +35,14 @@ urlpatterns = patterns('',
         {'template':'base.html'}, 'pages-root'),
 
     url(r'^music/album/(?P<album_id>\d+)/tracklist/$', 'music.views.album_tracks', {}, 'music-album-tracklist'),
+
+    url(r'music/track/(?P<track_id>\d+)/download/$', 'music.views.send_track', {}, 'music-send-track'),
 )
 
-#urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     urlpatterns += patterns('',
-#       (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-#        {'document_root': settings.STATIC_ROOT}),
        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
     )

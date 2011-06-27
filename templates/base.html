@@ -122,27 +122,30 @@ function FuckedIECheck(){
 }
 
 jQuery(document).ready(function($){
- if (FuckedIECheck()){
-  $('a.video__button').colorbox({inline:true, rel:'group0'});
-  $('div.jscrollpane').jScrollPane({'autoReinitialise':true});
+  if (FuckedIECheck()){
+    $('a.video__button').colorbox({inline:true, rel:'group0'});
+    $('div.jscrollpane').jScrollPane({'autoReinitialise':true});
 
-  $('#wall-tabs').tabs();
+    $('#wall-tabs').tabs();
 
-  $('#pageintro').hide();
-  WellDone = true;
-  var active_page_id = Link.getPathnameFromHashOfCurrentUrl('page-home');
-  nav.goto_page(active_page_id);
+    $('#pageintro').hide();
+    WellDone = true;
+    var active_page_id = Link.getPathnameFromHashOfCurrentUrl('page-home');
+    nav.goto_page(active_page_id);
 
-  // init player
-  $('#player-block').jPlayer({
-    swfPath: "{{MEDIA_URL}}/js/jplayer"
-  }).bind($.jPlayer.event.play, function(){
-    $(this).jPlayer("pauseOthers");
-  });
+    $('#player-block').jPlayer({ swfPath: "{{MEDIA_URL}}/js/jplayer"});
+    $('#player-block').bind($.jPlayer.event.play, function(){
+      $(this).jPlayer("pauseOthers"); 
+    });
+    $('#player-block').bind($.jPlayer.event.ended, function(){
+      music.play_next_or_stop();
+    });
 
-  VK.init({apiId:1000000, onlyWidgets: true});
-  VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
- }
+    try {
+      VK.init({apiId:1000000, onlyWidgets: true});
+      VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
+     } catch (err){}
+  }
 });
 </script>
 
