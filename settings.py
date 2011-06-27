@@ -216,3 +216,11 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 #FILEBROWSER_URL_TINYMCE = STATIC_URL + "tinymce/jscripts/tiny_mce/"
 #FILEBROWSER_PATH_TINYMCE = STATIC_URL + "tinymce/jscripts/tiny_mce/"
+FILEBROWSER_EXTENSIONS = {
+#    'Folder':[''],
+    'Image':['.jpg', '.jpeg', '.gif','.png','.tif','.tiff', '.bmp'],
+    'Video':['.mov','.wmv','.mpeg','.mpg','.avi','.rm', '.flv'],
+#    'Document':['.pdf','.doc','.rtf','.txt','.xls','.csv'],
+    'Sound':['.mp3','.mp4',],
+    'Archive': ['.zip', '.rar', '.arj', '.gz', '.tar'],
+}

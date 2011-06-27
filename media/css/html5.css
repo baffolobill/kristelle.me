@@ -299,7 +299,7 @@ input, select, textarea, .inputbox {
 }
 
 /** music **/
-.page__wrapper.music { min-width: 580px; }
+.page__wrapper.music { width: 585px; }
 .page__wrapper.music .page__content {}
 .page__music .holder {
     background: transparent url(../images/html5/music_bg.jpg) no-repeat;
@@ -310,9 +310,11 @@ input, select, textarea, .inputbox {
     float: left;
     clear: both;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    width: 100%;
+    position: relative;
 }
-.music-albums {}
+.music-albums { position: relative; }
 
 .music-album {
     display: block;
@@ -364,6 +366,9 @@ input, select, textarea, .inputbox {
 .album__tracks {
     font-size: 11px;
 }
+.album__download {
+    font-size: 11px;
+}
 
 
 .music-album__tracklist {
@@ -408,6 +413,19 @@ input, select, textarea, .inputbox {
     padding-left: 6px;
     white-space: nowrap;
     cursor: pointer;
+    float: left;
+}
+.track__download {
+    display: block;
+
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    font-size: 11px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 .track__meta { display: none !important; }
 

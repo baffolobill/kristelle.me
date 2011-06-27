@@ -11,7 +11,7 @@ class Album(models.Model):
     cover = FileBrowseField(_('cover'), max_length=255, directory='music/album/cover',
                             extensions=[".jpg", '.png'], blank=True, null=True)
     file = FileBrowseField(_('zip'), max_length=255, directory='music/album/zip',
-                           extensions=['.zip',], blank=True, null=True,
+                           extensions=['.zip'], blank=True, null=True,
                            help_text=_('zipped album'))
     ordering = models.IntegerField(_('ordering'), max_length=5, default=1)
     year = models.IntegerField(_('year'), max_length=4, 
@@ -26,6 +26,9 @@ class Album(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('music.views.album_tracks', [str(self.pk)])
+
+    def get_download_url(self):
+        return self.file.url
 
     class Meta:
         verbose_name = _('album')
@@ -49,6 +52,8 @@ class Track(models.Model):
             return 'http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3'
         return self.file.url
 
+    def get_download_url(self):
+        return self.file.url
 
     def save(self, *args, **kwargs):
         model = self.__class__
