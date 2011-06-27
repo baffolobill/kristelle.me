@@ -120,7 +120,7 @@ input, select, textarea, .inputbox {
 }
 
 .page__home .holder {
-    background: transparent url(../images/html5/homepage_bg.jpg) no-repeat;
+    background: transparent url(../images/html5/homepage_bg.png) no-repeat;
     background-position: 100% 25%;
 }
 
@@ -417,7 +417,7 @@ input, select, textarea, .inputbox {
 }
 .track__download {
     display: block;
-
+    
     padding: 0 10px;
     height: 25px;
     line-height: 25px;
@@ -626,29 +626,8 @@ input, select, textarea, .inputbox {
 
 
 /** wall **/
-.page__wrapper.wall {
-    background: url(../images/html5/transparent_tile.png);
-    top: 150px;
-    bottom: 50px;
-    left: 80px;
-    width: 550px;
-    padding: 10px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-box-shadow: 0 0 5px #888;
-    -webkit-box-shadow: 0 0 5px #888;
-    box-shadow: 0 0 5px #888;
-}
-.page__wrapper.wall .page__content {
-    background: #f8f8f8;
-    width: 530px;
-    height: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-}
+.page__wrapper.wall { width: 720px; }
+.page__wrapper.wall .page__content {}
 .page__wall .holder {
     background: transparent url(../images/html5/wall_bg.jpg) no-repeat;
     background-position: 100% 100%;
