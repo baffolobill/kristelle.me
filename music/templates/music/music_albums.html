@@ -1,0 +1,8 @@
+{% load i18n %}
+{% load html5_music %}
+
+<div class="music-albums clearfix">
+  {% for album in albums %}
+    {% music_album album %}
+  {% endfor %}
+</div>

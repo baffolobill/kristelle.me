@@ -1,0 +1,50 @@
+{% load i18n %}
+
+<div class="contacts clearfix">
+  <ul class="contacts__list">
+    {% if object.phonenumber_set.all %}
+      {% for phone in object.phonenumber_set.all %}
+      <li {% if forloop.first %} class="tel"{% endif %}>
+	<span class="value">{{ phone.phone_number }}</span>
+      </li>
+      {% endfor %}
+    {% endif %}
+
+    {% if object.emailaddress_set.all %}
+      {% for email in object.emailaddress_set.all %}
+      <li {% if forloop.first %} class="email"{% endif %}>
+	<a href="mailto:{{ email.email_address }}" class="value">{{ email.email_address }}</a>
+      </li>
+      {% endfor %}
+    {% endif %}
+
+    {% if object.instantmessenger_set.all %}
+      {% for im in object.instantmessenger_set.all %}
+      <li class="{{im.service|lower}}">
+	<span class="value">{{im.im_account}}</span>
+      </li>
+      {% endfor %}
+    {% endif %}
+      
+    {% if object.website_set.all %}
+      {% for web in object.website_set.all %}
+      <li class="{{web.service|lower}}">
+	<a href="{{ web.url }}" class="url" target="_blank">{{web.url}}</a>
+      </li>
+      {% endfor %}
+    {% endif %}
+  </ul>
+
+  <div class="contact-us clearfix">
+    <form name="contact_us_form" action="{% url contact-us %}" method="post" id="contact-us-form">
+      {% csrf_token %}
+      <div id="contact-us-message">
+	<span class="title clearfix">{% trans 'contact us' %}</span>
+	<textarea name="message" rows="8" cols="37"></textarea>
+      </div><!-- end message -->
+      <div id="contact-us-submit">
+	<input type="button" onclick="contacts.send(this);" value="{% trans 'submit' %}" />
+      </div><!-- end submit -->
+    </form>
+  </div>
+</div>

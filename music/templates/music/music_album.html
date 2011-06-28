@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load html5_music %}
+
+{% if album.track_set.all %}
+<div class="music-album clearfix {% if forloop.first %}first{%endif%}">
+  <div class="music-album__detail clearfix">
+    <div class="album__cover clearfix">
+      {% if album.cover %}
+      <img src="{{album.cover.url}}" />
+      {% endif %}
+    </div>
+    <div class="album__text clearfix">
+      <span class="album__title clearfix"
+	    title="{{album.title|title}}">{{album.title|slice:'18'|title}}{% if album.title|length > 18 %}...{%endif%}</span>
+      <span class="album__year clearfix">{{album.year}}</span>
+      <span class="album__tracks clearfix">{% trans 'Tracks' %}: {{album.track_set.all|length}}</span>
+      {% if album.file %}
+      <a href="{{album.get_download_url}}" title="{% trans 'Download this album.' %}" 
+	 class="album__download clearfix">{% trans 'Download album' %}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="music-album__tracklist clearfix">
+    {% for track in album.track_set.all %}
+    <div class="tracklist__track music-track clearfix">
+      <span class="track__play clearfix">&nbsp;</span>
+      <span class="track__title clearfix"
+	    title="{{track.title|title}}">{{track.title|slice:':20'|title}}{% if track.title|length > 20 %}...{%endif%}</span>
+      <a href="{{track.get_download_url}}"
+	 title="{% trans 'Download this track' %}"
+	 target="_blank" 
+	 class="track__download clearfix">{% trans 'download' %}</a>
+      <ul class="track__meta">
+	<li class="track__meta__id">{{track.pk}}</li>
+	<li class="track__meta__name">{{track.title}}</li>
+	<li class="track__meta__file">{{track.get_absolute_url}}</li>
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

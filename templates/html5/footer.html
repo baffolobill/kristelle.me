@@ -1,0 +1,11 @@
+<div class="footer-menu clearfix">
+  <ul class="footer-menu__items clearfix">
+    {% for item in items %}
+    <li class="{%if forloop.first %}first{%endif%} {%if forloop.last %}last{%endif%}">
+      <a href="#{{item.id}}" 
+	 onclick="return nav.goto_page('{{item.id}}');" 
+	 title="{{item.title}}">{{item.label|lower}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

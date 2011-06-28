@@ -1,0 +1,408 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-28 16:54+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: settings.py:42
+msgid "English"
+msgstr ""
+
+#: settings.py:43 templates/html5/homepage.html:11
+msgid "Russian"
+msgstr "Русский"
+
+#: biography/models.py:9 contacts/models.py:8
+msgid "name"
+msgstr "название"
+
+#: biography/models.py:10 contacts/models.py:9
+msgid "Not displayed, just for you."
+msgstr ""
+
+#: biography/models.py:11 contacts/models.py:10
+msgid "primary"
+msgstr ""
+
+#: biography/models.py:16 news/models.py:25
+msgid "Content"
+msgstr "Содержание"
+
+#: biography/models.py:25 biography/views.py:15
+#: templates/html5/biography.html:13
+msgid "biography"
+msgstr "биография"
+
+#: biography/models.py:26
+msgid "biographies"
+msgstr "биографии"
+
+#: biography/templates/biography/html5_biography.html:8
+msgid "No biography yet."
+msgstr "Биографии пока еще нет."
+
+#: biography/templates/biography/index.html:5
+#: news/templatetags/html5_menu.py:13 news/templatetags/html5_menu.py:14
+msgid "Biography"
+msgstr "Биография"
+
+#: contacts/models.py:11 contacts/models.py:39 contacts/models.py:63
+#: contacts/models.py:97 contacts/models.py:123
+msgid "date added"
+msgstr "добавлено"
+
+#: contacts/models.py:12 contacts/models.py:40 contacts/models.py:64
+#: contacts/models.py:98 contacts/models.py:124
+msgid "date modified"
+msgstr "изменено"
+
+#: contacts/models.py:16
+msgid "contact"
+msgstr "контакты"
+
+#: contacts/models.py:17 contacts/views.py:17 templates/html5/contacts.html:13
+msgid "contacts"
+msgstr "контакты"
+
+#: contacts/models.py:24 contacts/models.py:51
+msgid "Work"
+msgstr ""
+
+#: contacts/models.py:25
+msgid "Mobile"
+msgstr ""
+
+#: contacts/models.py:26
+msgid "Fax"
+msgstr ""
+
+#: contacts/models.py:27
+msgid "Home"
+msgstr ""
+
+#: contacts/models.py:28 contacts/models.py:53 contacts/models.py:86
+msgid "Other"
+msgstr ""
+
+#: contacts/models.py:35
+msgid "number"
+msgstr ""
+
+#: contacts/models.py:52
+msgid "Personal"
+msgstr ""
+
+#: contacts/models.py:59
+msgid "email address"
+msgstr ""
+
+#: contacts/models.py:91
+msgid "im account"
+msgstr ""
+
+#: contacts/models.py:94 contacts/models.py:121
+msgid "service"
+msgstr ""
+
+#: contacts/models.py:109
+msgid "Web Site"
+msgstr ""
+
+#: contacts/models.py:110
+msgid "Facebook.com"
+msgstr ""
+
+#: contacts/models.py:111
+msgid "Vkontakte.ru"
+msgstr ""
+
+#: contacts/models.py:112
+msgid "MySpace.com"
+msgstr ""
+
+#: contacts/models.py:118
+msgid "URL"
+msgstr ""
+
+#: contacts/models.py:131
+msgid "web site"
+msgstr ""
+
+#: contacts/models.py:132
+msgid "web sites"
+msgstr ""
+
+#: contacts/views.py:24
+msgid "Feedback from kristelle.me"
+msgstr ""
+
+#: contacts/views.py:29
+msgid "Sorry, cannot send email. Try again later."
+msgstr ""
+
+#: contacts/views.py:31
+msgid "Thank you for contacting us."
+msgstr ""
+
+#: contacts/views.py:33
+msgid "Thanks for empty message :)"
+msgstr ""
+
+#: contacts/templates/contacts/_email_address_list.html:5
+msgid "Email Addresses"
+msgstr ""
+
+#: contacts/templates/contacts/_instant_messenger_list.html:5
+msgid "Instant Messengers"
+msgstr ""
+
+#: contacts/templates/contacts/_phone_number_list.html:5
+msgid "Phone Numbers"
+msgstr ""
+
+#: contacts/templates/contacts/_web_site_list.html:5
+msgid "Web sites"
+msgstr ""
+
+#: contacts/templates/contacts/detail.html:5
+msgid "Contacts"
+msgstr ""
+
+#: contacts/templates/contacts/html5_contacts.html:42
+msgid "contact us"
+msgstr ""
+
+#: contacts/templates/contacts/html5_contacts.html:46
+msgid "submit"
+msgstr ""
+
+#: music/models.py:8
+msgid "album title"
+msgstr ""
+
+#: music/models.py:11
+msgid "cover"
+msgstr ""
+
+#: music/models.py:13
+msgid "zip"
+msgstr ""
+
+#: music/models.py:15
+msgid "zipped album"
+msgstr ""
+
+#: music/models.py:16 music/models.py:43
+msgid "ordering"
+msgstr ""
+
+#: music/models.py:17
+msgid "year"
+msgstr ""
+
+#: music/models.py:21
+msgid "published"
+msgstr ""
+
+#: music/models.py:34
+msgid "album"
+msgstr ""
+
+#: music/models.py:35
+msgid "albums"
+msgstr ""
+
+#: music/models.py:40
+msgid "title"
+msgstr ""
+
+#: music/models.py:41
+msgid "file"
+msgstr ""
+
+#: music/models.py:70
+msgid "track"
+msgstr ""
+
+#: music/models.py:71
+msgid "tracks"
+msgstr ""
+
+#: music/views.py:13
+msgid "Album does not exist."
+msgstr ""
+
+#: music/views.py:18
+msgid "Album has no tracks."
+msgstr ""
+
+#: music/templates/music/music_album.html:16
+msgid "Tracks"
+msgstr ""
+
+#: music/templates/music/music_album.html:18
+msgid "Download this album."
+msgstr ""
+
+#: music/templates/music/music_album.html:19
+msgid "Download album"
+msgstr ""
+
+#: music/templates/music/music_album.html:31
+#: music/templates/music/single_track.html:9
+msgid "Download this track"
+msgstr ""
+
+#: music/templates/music/music_album.html:33
+#: music/templates/music/single_track.html:11
+msgid "download"
+msgstr ""
+
+#: music/templates/music/single_tracks.html:5
+msgid "Single Tracks"
+msgstr ""
+
+#: news/admin.py:33
+#, python-format
+msgid "%(count)d newsitem was published"
+msgid_plural "%(count)d newsitems where published"
+msgstr[0] ""
+msgstr[1] ""
+
+#: news/admin.py:36
+msgid "Publish selected news"
+msgstr ""
+
+#: news/admin.py:41
+#, python-format
+msgid "%(count)d newsitem was unpublished"
+msgid_plural "%(count)d newsitems where unpublished"
+msgstr[0] ""
+msgstr[1] ""
+
+#: news/admin.py:44
+msgid "Unpublish selected news"
+msgstr ""
+
+#: news/models.py:17
+msgid "Published"
+msgstr ""
+
+#: news/models.py:18
+msgid "Publication date"
+msgstr ""
+
+#: news/models.py:24
+msgid "Title"
+msgstr ""
+
+#: news/models.py:32
+msgid "No title"
+msgstr ""
+
+#: news/models.py:36 news/models.py:37 news/templatetags/html5_menu.py:10
+#: news/templatetags/html5_menu.py:11
+msgid "News"
+msgstr "Новости"
+
+#: news/templates/news/html5_news.html:19
+msgid "No news yet."
+msgstr "Новостей пока еще нет."
+
+#: news/templatetags/html5_menu.py:16 news/templatetags/html5_menu.py:17
+msgid "Music"
+msgstr "Музыка"
+
+#: news/templatetags/html5_menu.py:19 news/templatetags/html5_menu.py:20
+#: videos/templates/videos/index.html:19
+msgid "Videos"
+msgstr "Видео"
+
+#: news/templatetags/html5_menu.py:22 news/templatetags/html5_menu.py:23
+#: photos/templates/photos/index.html:5
+msgid "Photos"
+msgstr "Фото"
+
+#: news/templatetags/html5_menu.py:25 news/templatetags/html5_menu.py:26
+msgid "Wall"
+msgstr "Стена"
+
+#: news/templatetags/html5_menu.py:28 news/templatetags/html5_menu.py:29
+msgid "Contact Us"
+msgstr "Контакты"
+
+#: photos/views.py:34 photos/views.py:55 templates/html5/photos.html:13
+msgid "photos"
+msgstr "фото"
+
+#: photos/templates/photos/html5_album_photos.html:5
+#: photos/templates/photos/html5_album_photos.html:7
+msgid "Back to albums"
+msgstr "Вернуться к альбомам"
+
+#: photos/templates/photos/html5_albums.html:37
+msgid "No photos yet."
+msgstr ""
+
+#: templates/base.html:61
+msgid ""
+"Emmm. It seems that your browser doesn't support JavaScript. It's terribly :("
+msgstr ""
+
+#: templates/base.html:64
+msgid ""
+"\n"
+"\t  Internet Explorer, which you're using was released in 2001.\n"
+"\t  It's time to update browser.\n"
+"\t  "
+msgstr ""
+
+#: templates/photo_copyass.html:3
+msgid "Original photo made by"
+msgstr "Исходное фото сделано"
+
+#: templates/html5/homepage.html:11 templates/html5/homepage.html.py:14
+msgid "Current language"
+msgstr "Текущий язык"
+
+#: templates/html5/music.html:13
+msgid "music"
+msgstr "музыка"
+
+#: templates/html5/music.html:16 templates/html5/photos.html:16
+msgid "Sending Request..."
+msgstr "Отправка запроса..."
+
+#: templates/html5/videos.html:13 videos/views.py:42
+msgid "videos"
+msgstr "видео"
+
+#: templates/html5/wall.html:13
+msgid "wall"
+msgstr "стена"
+
+#: videos/templates/videos/html5_videos.html:37
+msgid "No videos yet."
+msgstr "Видео пока еще нет."
+
+#: wall/templates/wall/html5_wall.html:7
+msgid "VKontakte"
+msgstr "Вконтакте"
+
+#~ msgid "Read more"
+#~ msgstr "еще..."

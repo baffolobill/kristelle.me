@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load html5_music %}
+
+<div class="music-single-tracks clearfix">
+  <span class="title clearfix">{% trans "Single Tracks" %}</span>
+  {% for track in tracks %}
+    {% single_track track %}
+  {% endfor %}
+</div>
