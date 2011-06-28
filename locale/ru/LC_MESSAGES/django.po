@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-28 16:54+0400\n"
+"POT-Creation-Date: 2011-06-28 20:27+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,6 +251,11 @@ msgstr ""
 msgid "Album has no tracks."
 msgstr ""
 
+#: music/templates/music/html5_music.html:7
+#, fuzzy
+msgid "No music yet."
+msgstr "Музыки пока еще нет."
+
 #: music/templates/music/music_album.html:16
 msgid "Tracks"
 msgstr ""
@@ -372,7 +377,7 @@ msgid ""
 "\t  "
 msgstr ""
 
-#: templates/photo_copyass.html:3
+#: templates/photo_copyass.html:4
 msgid "Original photo made by"
 msgstr "Исходное фото сделано"
 
