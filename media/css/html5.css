@@ -73,7 +73,6 @@ input, select, textarea, .inputbox {
 .inputbox:hover, .inputbox:focus { background: #ffffcc; }
 
 #wrapper { 
-    background: url(../images/html5/background-tile.png) repeat;
     width: 100%;
     height: 100%;
 }
@@ -108,6 +107,7 @@ input, select, textarea, .inputbox {
     width: 100%;
     margin: 0;
     padding: 0;
+    background: url(../images/html5/background-tile.png) repeat;
 }
 .page-base.current {
     display: block;
@@ -302,8 +302,8 @@ input, select, textarea, .inputbox {
 .page__wrapper.music { width: 585px; }
 .page__wrapper.music .page__content {}
 .page__music .holder {
-    background: transparent url(../images/html5/music_bg.jpg) no-repeat;
-    background-position: 100% 100%;
+    background: transparent url(../images/html5/music_bg.png) no-repeat;
+    background-position: 90% 100%;
 }
 .music-block {
     overflow: hidden;
@@ -467,7 +467,7 @@ input, select, textarea, .inputbox {
 .page__wrapper.videos {}
 .page__wrapper.videos .page__content {}
 .page__videos .holder {
-    background: transparent url(../images/html5/videos_bg.jpg) no-repeat;
+    background: transparent url(../images/html5/videos_bg.png) no-repeat;
     background-position: 100% 100%;
 }
 .videos__table { width: 100%; }
@@ -495,15 +495,19 @@ input, select, textarea, .inputbox {
 
 
 /** photos **/
+.page__photos {
+    background-image: url(../images/html5/photos-bg-tile.png);
+}
 .page__wrapper.photos {
     width: 60%;
     max-width: 700px;
     min-width: 300px;
+    background-image: url(../images/html5/photos_transparent_tile.png);
 }
 .page__wrapper.photos .page__content {}
 .page__photos .holder {
-    background: transparent url(../images/html5/photos_bg.jpg) no-repeat;
-    background-position: 100% 100%;
+    background: transparent url(../images/html5/photos_bg.png) no-repeat;
+    background-position: 85% 100%;
 }
 .photo-albums {
     float: left;
@@ -629,8 +633,8 @@ input, select, textarea, .inputbox {
 .page__wrapper.wall { width: 720px; }
 .page__wrapper.wall .page__content {}
 .page__wall .holder {
-    background: transparent url(../images/html5/wall_bg.jpg) no-repeat;
-    background-position: 100% 100%;
+    background: transparent url(../images/html5/wall_bg.png) no-repeat;
+    background-position: 90% 100%;
 }
 
 
@@ -638,7 +642,7 @@ input, select, textarea, .inputbox {
 .page__wrapper.contacts { width: 640px; }
 .page__wrapper.contacts .page__content {}
 .page__contacts .holder {
-    background: transparent url(../images/html5/contacts_bg.jpg) no-repeat;
+    background: transparent url(../images/html5/contacts_bg.png) no-repeat;
     background-position: 100% 100%;
 }
 .contacts__list {
