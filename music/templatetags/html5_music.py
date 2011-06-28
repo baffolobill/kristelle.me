@@ -7,11 +7,12 @@ register = template.Library()
 
 @register.inclusion_tag('music/html5_music.html', takes_context=True)
 def html5_music_stuff(context):
+    context['albums'] = models.Album.objects.filter(published=True).order_by('ordering')
+    context['tracks'] = models.Track.objects.filter(album__isnull=True).order_by('ordering')
     return context
 
 @register.inclusion_tag('music/music_albums.html')
-def music_albums():
-    albums = models.Album.objects.filter(published=True).order_by('ordering')
+def music_albums(albums):
     return {'albums':albums}
 
 @register.inclusion_tag('music/music_album.html', takes_context=True)
@@ -20,8 +21,7 @@ def music_album(context, item):
     return context
 
 @register.inclusion_tag('music/single_tracks.html')
-def single_tracks():
-    tracks = models.Track.objects.filter(album__isnull=True).order_by('ordering')
+def single_tracks(tracks):
     return {'tracks':tracks}
 
 @register.inclusion_tag('music/single_track.html', takes_context=True)

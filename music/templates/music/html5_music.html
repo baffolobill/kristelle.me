@@ -1,10 +1,16 @@
+{% load i18n %}
 {% load html5_music %}
 
 <div id="music-albums" class="music-block clearfix">
+
+  {% if not albums and tracks %}
+  <p>{% trans 'No music yet.' %}</p>
+  {% else %}
   <!-- music albums -->
-  {% music_albums %}
+  {% music_albums albums %}
 
   <!-- single tracks -->
-  {% single_tracks %}
+  {% single_tracks tracks %}
+  {% endif %}
 </div>
 
