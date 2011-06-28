@@ -9,11 +9,12 @@ NEWS_SHOWED = 5
 def html5_news_items(context):
     items = models.News.public.all()[:NEWS_SHOWED]
     context['items'] = []
-    try:
-        for item in items:
+
+    for item in items:
+        try:
             if len(item.title) and len(item.content):
                 context['items'].append(item)
-    except:
-        pass
+        except:
+            pass
 
     return context
