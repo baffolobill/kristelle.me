@@ -1,9 +1,0 @@
-<ul id="cssmenu" class="clearfix">
-{% for section in sections %}
-  {% if section.is_current %}
-    <li class="selected"><a href="{{ section.url }}">{{ section.title }}</a></li>
-  {% else %}
-    <li><a href="{{ section.url }}">{{ section.title }}</a></li>
-  {% endif %}
-{% endfor %}
-</ul>

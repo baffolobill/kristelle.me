@@ -18,17 +18,17 @@ urlpatterns = patterns('',
 
     url(r'^admin_tools/', include('admin_tools.urls')),
 
-    url(r'^', include('news.urls')),
+#    url(r'^', include('news.urls')),
 
     url(r'^tinymce/', include('tinymce.urls')),
 
-    url(r'^photos/$', 'photos.views.index', {}, 'photos-index'),
+#    url(r'^photos/$', 'photos.views.index', {}, 'photos-index'),
     url(r'^photos/album/(?P<album_id>\d+)/$', 'photos.views.album', {}, 'photos-album'),
 
 
-    url(r'^videos/$', 'videos.views.index', {}, 'videos-index'),
-    url(r'^biography/$', 'biography.views.biography', {}, 'biography-index'),
-    url(r'^contacts/$', 'contacts.views.detail', {}, 'contacts-detail'),
+ #   url(r'^videos/$', 'videos.views.index', {}, 'videos-index'),
+ #   url(r'^biography/$', 'biography.views.biography', {}, 'biography-index'),
+ #   url(r'^contacts/$', 'contacts.views.detail', {}, 'contacts-detail'),
 
     url(r'^contact-us/$', 'contacts.views.contact_us', {}, 'contact-us'),
     url(r'^html5/$', 'django.views.generic.simple.direct_to_template', 

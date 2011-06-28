@@ -724,3 +724,24 @@ input, select, textarea, .inputbox {
 .footer-menu__items li a:hover {
     color: #f8f8f8;
 }
+
+/* photo copyass */
+.photo-copyass {
+    color: #fff;
+    width: 130px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: url(../images/html5/photo_copyass.png) no-repeat 100% 100%;
+    vertical-align: middle;
+}
+.photo-copyass__on_en {
+    width: 120px;
+}
+.copyass__text {
+    width: 50px;
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 11px;
+}

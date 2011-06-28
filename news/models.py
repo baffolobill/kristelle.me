@@ -2,7 +2,6 @@ import datetime
 
 from django.db import models
 from django.utils.translation import ugettext as _
-from django.template.defaultfilters import slugify
 from nani.models import TranslatableModel, TranslatedFields,\
     TranslationManager
 
@@ -15,8 +14,6 @@ class PublicNewsManager(models.Manager):
 
 
 class News(TranslatableModel):
-    slug = models.SlugField(_('Slug'), unique_for_date='pub_date',
-                            help_text=_('A slug is a short name which uniquely identifies the news item for this day'))
     published = models.BooleanField(_('Published'), default=False)
     pub_date = models.DateTimeField(_('Publication date'), 
                                     default=datetime.datetime.now())
@@ -25,23 +22,15 @@ class News(TranslatableModel):
 
     translations = TranslatedFields(
         title = models.CharField(_('Title'), max_length=255),
-        excerpt = models.TextField(_('Excerpt'), blank=True),
-        content = models.TextField(_('Content'), blank=True),
+        content = models.TextField(_('Content')),
         )
 
     public = PublicNewsManager()
     objects = TranslationManager()
 
     def __unicode__(self):
-        return self.safe_translation_getter('title', self.slug)
+        return self.safe_translation_getter('title', _('No title'))
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('news_detail', (), {
-                'year': self.pub_date.strftime("%Y"),
-                'month': self.pub_date.strftime("%m"),
-                'day': self.pub_date.strftime("%d"),
-                'slug': self.slug})
 
     class Meta:
         verbose_name = _('News')
