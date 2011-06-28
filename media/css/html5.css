@@ -89,12 +89,16 @@ input, select, textarea, .inputbox {
     width: 100%;
     margin: 0;
     padding: 0;
+    background: url(../images/html5/background-tile.png) repeat;
 }
 .page-intro .holder {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
+}
+#ie6sucks {
+    color: #f8f8f8;
 }
 
 /* page base */
@@ -608,7 +612,7 @@ input, select, textarea, .inputbox {
     padding: 10px 10px 10px 30px;
     position: absolute;
     top: 0px;
-    width: 110px;
+    width: 120px;
     z-index: 1001;
 }
 .music__back,
