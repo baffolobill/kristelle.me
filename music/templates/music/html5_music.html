@@ -3,7 +3,7 @@
 
 <div id="music-albums" class="music-block clearfix">
 
-  {% if not albums and tracks %}
+  {% if albums|length == 0 and tracks|length == 0 %}
   <p>{% trans 'No music yet.' %}</p>
   {% else %}
   <!-- music albums -->
