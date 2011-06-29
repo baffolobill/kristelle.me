@@ -11,7 +11,7 @@
 
 <table class="album__table clearfix">
 {% for item in images %}
-  {% if forloop.counter0|divisibleby:4 %}<tr>{% endif %}
+  {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
       <div class="album__image clearfix">
 	<a href="{{item.source}}" 
@@ -22,8 +22,7 @@
 	</a>
       </div>
     </td>
-  {% if forloop.counter|divisibleby:4 %}</tr>{% endif %}
+  {% if forloop.counter|divisibleby:3 %}</tr>{% endif %}
 {% endfor %}
-{% if not album|length|divisibleby:4 %}</tr>{% endif %}
+{% if not album|length|divisibleby:3 %}</tr>{% endif %}
 </table>
-

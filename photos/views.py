@@ -4,6 +4,7 @@ from django import http, shortcuts
 from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext as _
+from config4u.models import Config4u
 
 FID = 40796308305
 
@@ -19,19 +20,16 @@ class JSONResponse(http.HttpResponse):
 def get_albums():
     q = Graph()
 
+    config = Config4u.objects.filter(active=True)
+    if len(config):
+        FID = config[0].facebook_id
+
+
     response = q[FID].albums()
     if type(response) == dict and response.get('error'):
         return (response, response['error']['message'], False)
 
     return (response.get('data', []), None, True)
-
-def index(request):
-    q = Graph()
-    albums = q[FID].albums()['data']
-
-    ctx = RequestContext(request, {'albums':albums})
-    return shortcuts.render_to_response('photos/index.html', ctx)
-index.navigation = _('photos')
 
 def album(request, album_id):
     q = Graph()

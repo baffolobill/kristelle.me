@@ -503,10 +503,10 @@ input, select, textarea, .inputbox {
     background-image: url(../images/html5/photos-bg-tile.png);
 }
 .page__wrapper.photos {
-    width: 620px;
+    width: 640px;
     background-image: url(../images/html5/photos_transparent_tile.png);
 }
-.page__wrapper.photos .page__content { width: 600px; padding: 0px 10px; }
+.page__wrapper.photos .page__content { width: 620px; padding: 0px 10px; }
 .page__photos .holder {
     background: transparent url(../images/html5/photos_bg.png) no-repeat;
     background-position: 85% 100%;

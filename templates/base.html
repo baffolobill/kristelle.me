@@ -147,7 +147,7 @@ jQuery(document).ready(function($){
 
 
     try {
-      VK.init({apiId:1000000, onlyWidgets: true});
+      VK.init({apiId:'{{params.vkontakte_apiId}}', onlyWidgets: true});
       VK.Widgets.Comments("vk_comments", {limit: 10, width: "678", attach: "*"});
      } catch (err){}
   }

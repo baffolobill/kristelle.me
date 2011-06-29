@@ -8,8 +8,8 @@ class Person(models.Model):
     name = models.CharField(_('name'), max_length=255,
 			    help_text=_('Not displayed, just for you.'))
     active = models.BooleanField(_('primary'), default=False)
-    date_added = models.DateTimeField(_('date added'), auto_now_add=True)
-    date_modified = models.DateTimeField(_('date modified'), auto_now=True)
+    date_added = models.DateTimeField(auto_now_add=True, editable=False)
+    date_modified = models.DateTimeField(auto_now=True, editable=False)
 	
     class Meta:
         db_table = 'contacts_people'

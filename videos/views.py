@@ -1,12 +1,13 @@
 import urllib
 import urllib2
 
+from facegraph import Graph
+
 from django.utils import simplejson
 from django import http, shortcuts
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
-
-FID = 40796308305
+from config4u.models import Config4u
 
 def fql(fql, args=None):
     if not args: 
@@ -26,17 +27,16 @@ def fql(fql, args=None):
     return (response, None, True)
 
 def get_videos():
+    FID = '40796308305'
+
+    config = Config4u.objects.filter(active=True)
+    if len(config):
+        FID = config[0].facebook_id
+
     query = "SELECT vid,title,description,"\
         " thumbnail_link, src"\
         " FROM video WHERE owner=%s"%FID
     
     return fql(query)
 
-def index(request):
-    items, errors, success = fql(query)
-    
-    ctx = RequestContext(request, {'videos':items,
-                                   'errors': errors,
-                                   'success': success})
-    return shortcuts.render_to_response('videos/index.html', ctx)
-index.navigation = _('videos')
+

@@ -163,6 +163,7 @@ INSTALLED_APPS = (
     'videos',
     'contacts',
     'tinymce',
+    'config4u',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -4,6 +4,12 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
+from config4u.models import Config4u
+c4u = Config4u.objects.filter(active=True)
+vai = 10000000
+if len(c4u):
+    vai = c4u[0].vkontakte
+
 
 urlpatterns = patterns('',
     # Examples:
@@ -16,23 +22,13 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^admin_tools/', include('admin_tools.urls')),
-
-#    url(r'^', include('news.urls')),
-
     url(r'^tinymce/', include('tinymce.urls')),
 
-#    url(r'^photos/$', 'photos.views.index', {}, 'photos-index'),
     url(r'^photos/album/(?P<album_id>\d+)/$', 'photos.views.album', {}, 'photos-album'),
 
-
- #   url(r'^videos/$', 'videos.views.index', {}, 'videos-index'),
- #   url(r'^biography/$', 'biography.views.biography', {}, 'biography-index'),
- #   url(r'^contacts/$', 'contacts.views.detail', {}, 'contacts-detail'),
-
     url(r'^contact-us/$', 'contacts.views.contact_us', {}, 'contact-us'),
-    url(r'^html5/$', 'django.views.generic.simple.direct_to_template', 
-        {'template':'base.html'}, 'pages-root'),
+    url(r'^$', 'django.views.generic.simple.direct_to_template', 
+        {'template':'base.html', 'vkontakte_apiId':vai}, 'pages-root'),
 
     url(r'^music/album/(?P<album_id>\d+)/tracklist/$', 'music.views.album_tracks', {}, 'music-album-tracklist'),
 
