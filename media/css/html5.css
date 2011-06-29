@@ -468,7 +468,7 @@ input, select, textarea, .inputbox {
 .music-track.active { background: #c9c9c9; }
 
 /** videos **/
-.page__wrapper.videos {}
+.page__wrapper.videos { width: 620px; }
 .page__wrapper.videos .page__content {}
 .page__videos .holder {
     background: transparent url(../images/html5/videos_bg.png) no-repeat;
