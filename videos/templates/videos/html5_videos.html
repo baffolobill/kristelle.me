@@ -13,16 +13,19 @@
     <td>
       <div class="video__cover clearfix">
 	<a href="#video-{{video.vid}}" title="{{video.title}}" 
+{#	   onclick="return videos.show(this, 'video-{{video.vid}}');" #}
 	   class="videoThumb video__button clearfix">
 	  <i style="margin:0;background-image:url({{video.thumbnail_link}});"></i>
 	</a>
       </div>
       <div class="video__detail clearfix">
 	<a href="#video-{{video.vid}}" title="{{video.title}}" 
+{#	   onclick="return videos.show(this, 'video-{{video.vid}}');" #}
 	   class="photo-album__title video__button clearfix">{{video.title}}</a>
       </div>
       <div style="display: none;">
-	<div id="video-{{video.vid}}" class="video-js-box clearfix">
+	<div id="video-{{video.vid}}">{# class="video-js-box clearfix"> #}
+{%comment%}
 	  <video class="video-js" width="640" height="480" controls preload poster="{{video.thumbnail_link}}">
 	    <source src="{{video.src}}" type="video/mp4" />
 	    <object class="vjs-flash-fallback" width="640" height="480" type="application/x-shockwave-flash"
@@ -34,6 +37,8 @@
 		   title="No video playback capabilities." />
 	    </object>
 	  </video>
+{%endcomment%}
+	  {{video.embed_html|safe}}
 	</div>
       </div>
     </td>

@@ -2,16 +2,22 @@ function Videos(opts){
     var settings = {};
     this.settings = jQuery.extend(settings, opts);
     this.container = null;
+    this.vplayer = null;
 }
 
 Videos.prototype = {
-    show: function(obj, src){
+    show: function(obj, video_id){
 	var self = this;
 
-	jQuery('#video-player').jPlayer('setMedia', {
-		'm4v': src
-	    });
-	jQuery.colorbox({href:'#video-player-block', inline:true});
+	VideoJS.DOMReady(function(){
+	    self.vplayer = VideoJS.setup(video_id);
+	});
+
+	jQuery.colorbox({href:'#'+video_id, 
+		    inline:true,  
+		    scrolling:false, 
+		    innerWidth:'640px', 
+		    innerHeight:'480px'});
 
 	return false;
     }

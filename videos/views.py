@@ -34,7 +34,7 @@ def get_videos():
         FID = config[0].facebook_id
 
     query = "SELECT vid,title,description,"\
-        " thumbnail_link, src"\
+        " thumbnail_link,src,embed_html"\
         " FROM video WHERE owner=%s"%FID
     
     return fql(query)
