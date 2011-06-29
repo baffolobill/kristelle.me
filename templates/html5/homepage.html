@@ -19,10 +19,10 @@
       <a href="#arow-right" onclick="return nav.arrow_right(this);">&nbsp;</a></div>
     <div class="page__logo">
       <span class="logo__text clearfix">kristelle.me</span>
-      <span class="logo__subtext clearfix">&mdash; news &mdash;</span>
+      <span class="logo__subtext clearfix">&mdash; {% trans 'news' %} &mdash;</span>
     </div>
-    <div class="page__wrapper news main">
-      <div class="page__content jscrollpane">
+    <div class="page__wrapper news main clearfix">
+      <div class="page__content clearfix jscrollpane">
 	<div class="inner clearfix">
 	{% html5_news_items %}
 	</div>

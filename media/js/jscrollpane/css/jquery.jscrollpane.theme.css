@@ -1,37 +1,39 @@
 .jspTrack {
 	background: #f8f8f8;
-    box-shadow: inset 0px 0px 12px #ccc;
+/*    box-shadow: inset 0px 0px 12px #ccc;
     -moz-box-shadow: inset 0px 0px 12px #ccc;
-    -webkit-box-shadow: inset 0px 0px 12px #ccc;
+    -webkit-box-shadow: inset 0px 0px 12px #ccc;*/
 }
 
 .jspHorizontalBar,
 .jspVerticalBar,
 .jspTrack {
-    width: 12px;
-	-moz-border-radius: 12px;
-	-webkit-border-radius: 12px;
-	border-radius: 12px;
+    width: 8px;
+/*	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;*/
 }
 
 .jspDrag {
     border: 1px solid #655554;
-	background: transparent;/* #574948;*/
+	background: #444;
+    opacity: 0.3;
 
-	-moz-border-radius: 12px;
-	-webkit-border-radius: 12px;
-	border-radius: 12px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
     
-    box-shadow: inset 0px 0px 12px #655554;
+/*    box-shadow: inset 0px 0px 12px #655554;
     -moz-box-shadow: inset 0px 0px 12px #655554;
-    -webkit-box-shadow: inset 0px 0px 12px #655554;
+    -webkit-box-shadow: inset 0px 0px 12px #655554;*/
 }
 
 .jspTrack .jspActive,
 .jspTrack .jspHover,
 .jspDrag:hover
 {
-	background: #8F716F;
+/*	background: #8F716F;*/
+    opacity: 1;
 }
 
 
