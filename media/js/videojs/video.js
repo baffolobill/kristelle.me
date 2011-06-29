@@ -713,8 +713,11 @@ VideoJS.player.extend({
         this.element.style.height = (this.box.offsetHeight - this.controls.offsetHeight) + "px";
       }
     } else {
-      this.box.style.width = this.width() + "px";
+      //this.box.style.width = this.width() + "px";
       //this.element.style.height=this.height()+"px";
+        this.box.style.width = this.element.width + "px";
+        this.element.style.height = this.element.height + "px";      
+      
       if (this.options.controlsBelow) {
         this.element.style.height = "";
         // this.box.style.height = this.video.offsetHeight + this.controls.offsetHeight + "px";
