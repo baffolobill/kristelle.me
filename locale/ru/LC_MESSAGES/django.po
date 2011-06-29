@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-28 20:27+0400\n"
+"POT-Creation-Date: 2011-06-29 18:49+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,16 +271,16 @@ msgstr ""
 #: music/templates/music/music_album.html:31
 #: music/templates/music/single_track.html:9
 msgid "Download this track"
-msgstr ""
+msgstr "Скачать этот трэк"
 
 #: music/templates/music/music_album.html:33
 #: music/templates/music/single_track.html:11
 msgid "download"
-msgstr ""
+msgstr "скачать"
 
-#: music/templates/music/single_tracks.html:5
+#: music/templates/music/single_tracks.html:6
 msgid "Single Tracks"
-msgstr ""
+msgstr "Трэки"
 
 #: news/admin.py:33
 #, python-format
@@ -291,7 +291,7 @@ msgstr[1] ""
 
 #: news/admin.py:36
 msgid "Publish selected news"
-msgstr ""
+msgstr "Опубликовать выделенные новости"
 
 #: news/admin.py:41
 #, python-format
@@ -302,23 +302,23 @@ msgstr[1] ""
 
 #: news/admin.py:44
 msgid "Unpublish selected news"
-msgstr ""
+msgstr "Скрыть выделенные новости"
 
 #: news/models.py:17
 msgid "Published"
-msgstr ""
+msgstr "Опубликовать?"
 
 #: news/models.py:18
 msgid "Publication date"
-msgstr ""
+msgstr "Дата публикации"
 
 #: news/models.py:24
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: news/models.py:32
 msgid "No title"
-msgstr ""
+msgstr "Нет заголовка"
 
 #: news/models.py:36 news/models.py:37 news/templatetags/html5_menu.py:10
 #: news/templatetags/html5_menu.py:11
@@ -362,36 +362,45 @@ msgstr "Вернуться к альбомам"
 
 #: photos/templates/photos/html5_albums.html:37
 msgid "No photos yet."
-msgstr ""
+msgstr "Фото пока еще нет."
 
-#: templates/base.html:61
+#: templates/base.html:60
 msgid ""
 "Emmm. It seems that your browser doesn't support JavaScript. It's terribly :("
-msgstr ""
+msgstr "Упс. Кажется ваш браузер не поддерживает JavaScript. Это ужасно :("
 
-#: templates/base.html:64
+#: templates/base.html:63
 msgid ""
 "\n"
 "\t  Internet Explorer, which you're using was released in 2001.\n"
 "\t  It's time to update browser.\n"
 "\t  "
 msgstr ""
+"\n"
+"\t  Internet Explorer, который вы используете, был выпущен в 2001 году.\n"
+"\t  Пора его обновить, а еще лучше поставить Chrome или Firefox.\n"
+"\t  "
 
 #: templates/photo_copyass.html:4
 msgid "Original photo made by"
 msgstr "Исходное фото сделано"
 
+#: templates/html5/contacts.html:16 templates/html5/music.html:16
+#: templates/html5/photos.html:16
+msgid "Sending Request..."
+msgstr "Отправка запроса..."
+
 #: templates/html5/homepage.html:11 templates/html5/homepage.html.py:14
 msgid "Current language"
 msgstr "Текущий язык"
 
+#: templates/html5/homepage.html:22
+msgid "news"
+msgstr "новости"
+
 #: templates/html5/music.html:13
 msgid "music"
 msgstr "музыка"
-
-#: templates/html5/music.html:16 templates/html5/photos.html:16
-msgid "Sending Request..."
-msgstr "Отправка запроса..."
 
 #: templates/html5/videos.html:13 videos/views.py:42
 msgid "videos"
@@ -401,7 +410,7 @@ msgstr "видео"
 msgid "wall"
 msgstr "стена"
 
-#: videos/templates/videos/html5_videos.html:37
+#: videos/templates/videos/html5_videos.html:46
 msgid "No videos yet."
 msgstr "Видео пока еще нет."
 

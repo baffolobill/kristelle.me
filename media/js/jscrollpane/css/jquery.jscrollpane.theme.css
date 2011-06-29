@@ -1,5 +1,5 @@
 .jspTrack {
-	background: #f8f8f8;
+	background: transparent;
 /*    box-shadow: inset 0px 0px 12px #ccc;
     -moz-box-shadow: inset 0px 0px 12px #ccc;
     -webkit-box-shadow: inset 0px 0px 12px #ccc;*/
@@ -9,13 +9,14 @@
 .jspVerticalBar,
 .jspTrack {
     width: 8px;
+    background: transparent;
 /*	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;*/
 }
 
 .jspDrag {
-    border: 1px solid #655554;
+/*    border: 1px solid #655554;*/
 	background: #444;
     opacity: 0.3;
 
