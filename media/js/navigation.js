@@ -64,7 +64,7 @@ Navigation.prototype = {
 	this.next_page.show('slide', opts, self.settings.speed,
 				function(){
 				    self.show_arrows(self.next_page);
-				});
+				    });
     },
     hide_arrows: function(obj){
 	obj.find('.nav-arrows,.nav-lang').hide();
@@ -73,4 +73,4 @@ Navigation.prototype = {
 	obj.find('.nav-arrows,.nav-lang').show();
     }
 };
-nav = new Navigation();
+var nav = new Navigation();
