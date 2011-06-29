@@ -77,7 +77,7 @@ input, select, textarea, .inputbox {
     height: 100%;
 }
 
-.page__wrapper .inner { padding: 15px; }
+.page__wrapper .inner { padding-top: 10px; padding-bottom: 10px; }
 
 /* intro page */
 .page-intro {
@@ -248,8 +248,8 @@ input, select, textarea, .inputbox {
 
 
 /** news **/
-.page__wrapper.news {}
-.page__wrapper.news .page__content {}
+.page__wrapper.news { width: 600px; }
+.page__wrapper.news .page__content { width: 580px; padding: 0px 10px; }
 .news__item {
     position: relative;
     padding-left: 80px;
@@ -295,8 +295,8 @@ input, select, textarea, .inputbox {
 
 
 /** biography **/
-.page__wrapper.biography {}
-.page__wrapper.biography .page__content {}
+.page__wrapper.biography { width: 600px; }
+.page__wrapper.biography .page__content { width: 580px; padding: 0px 10px; }
 .page__biography .holder {
     background: transparent url(../images/html5/biography_bg.png) no-repeat;
     background-position: 100% 100%;
@@ -469,7 +469,7 @@ input, select, textarea, .inputbox {
 
 /** videos **/
 .page__wrapper.videos { width: 620px; }
-.page__wrapper.videos .page__content {}
+.page__wrapper.videos .page__content { width: 600px; padding: 0px 10px; }
 .page__videos .holder {
     background: transparent url(../images/html5/videos_bg.png) no-repeat;
     background-position: 100% 100%;
@@ -503,12 +503,10 @@ input, select, textarea, .inputbox {
     background-image: url(../images/html5/photos-bg-tile.png);
 }
 .page__wrapper.photos {
-    width: 60%;
-    max-width: 700px;
-    min-width: 300px;
+    width: 620px;
     background-image: url(../images/html5/photos_transparent_tile.png);
 }
-.page__wrapper.photos .page__content {}
+.page__wrapper.photos .page__content { width: 600px; padding: 0px 10px; }
 .page__photos .holder {
     background: transparent url(../images/html5/photos_bg.png) no-repeat;
     background-position: 85% 100%;
@@ -615,12 +613,10 @@ input, select, textarea, .inputbox {
     width: 120px;
     z-index: 1001;
 }
-.music__back,
 .photos__back {
     border-bottom: 1px solid #c9c9c9;
     margin: 0 0 10px;
 }
-.music__back_button,
 .photos__back_button {
     display: block;
     background: url(../images/html5/back-arrow.png) no-repeat;
@@ -635,7 +631,7 @@ input, select, textarea, .inputbox {
 
 /** wall **/
 .page__wrapper.wall { width: 720px; }
-.page__wrapper.wall .page__content {}
+.page__wrapper.wall .page__content { width: 700px; padding: 0px 10px; }
 .page__wall .holder {
     background: transparent url(../images/html5/wall_bg.png) no-repeat;
     background-position: 90% 100%;
@@ -644,7 +640,7 @@ input, select, textarea, .inputbox {
 
 /** contacts **/
 .page__wrapper.contacts { width: 640px; }
-.page__wrapper.contacts .page__content {}
+.page__wrapper.contacts .page__content { width: 620px; padding: 0px 10px; }
 .page__contacts .holder {
     background: transparent url(../images/html5/contacts_bg.png) no-repeat;
     background-position: 100% 100%;

@@ -27,7 +27,7 @@ def fql(fql, args=None):
 
 def get_videos():
     query = "SELECT vid,title,description,"\
-        " thumbnail_link, embed_html"\
+        " thumbnail_link, src"\
         " FROM video WHERE owner=%s"%FID
     
     return fql(query)

@@ -9,7 +9,6 @@
 {% if videos %}
 <table class="videos__table clearfix">
 {% for video in videos %}
-
   {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
       <div class="video__cover clearfix">
@@ -22,9 +21,19 @@
 	<a href="#video-{{video.vid}}" title="{{video.title}}" 
 	   class="photo-album__title video__button clearfix">{{video.title}}</a>
       </div>
-      <div style="display:none;">
-	<div id="video-{{video.vid}}">
-	  {{video.embed_html|safe}}
+      <div style="display: none;">
+	<div id="video-{{video.vid}}" class="video-js-box clearfix">
+	  <video class="video-js" width="640" height="480" controls preload poster="{{video.thumbnail_link}}">
+	    <source src="{{video.src}}" type="video/mp4" />
+	    <object class="vjs-flash-fallback" width="640" height="480" type="application/x-shockwave-flash"
+		    data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+              <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+              <param name="allowfullscreen" value="true" />
+              <param name="flashvars" value='config={"playlist":["{{video.thumbnail_link}}", {"url": "{{video.src}}","autoPlay":false,"autoBuffering":true}]}' />
+              <img src="{{video.thumbnail_link}}" width="640" height="480" alt="{{video.title}}"
+		   title="No video playback capabilities." />
+	    </object>
+	  </video>
 	</div>
       </div>
     </td>
