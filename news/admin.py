@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from django.utils.translation import ungettext
-
+from django.utils.translation import ugettext
 from news.forms import NewsForm
 from news.models import News
 

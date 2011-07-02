@@ -39,8 +39,8 @@ class PhotoAlbum(TranslatableModel):
 
 
     class Meta:
-        verbose_name = _('photo album')
-        verbose_name_plural = _('photo albums')
+        verbose_name = _('album')
+        verbose_name_plural = _('albums')
         ordering = ('ordering',)
 
 class Photo(models.Model):
@@ -71,4 +71,4 @@ class Photo(models.Model):
     class Meta:
         verbose_name = _('photo')
         verbose_name_plural = _('photos')
-        ordering = ('ordering',)
+        ordering = ('album__ordering', 'ordering',)

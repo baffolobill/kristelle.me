@@ -19,23 +19,10 @@ class Person(models.Model):
     def __unicode__(self):
         return self.name
 	
-
-PHONE_LOCATION_CHOICES = (
-    ('work', _('Work')),
-    ('mobile', _('Mobile')),
-    ('fax', _('Fax')),
-    ('home', _('Home')),
-    ('other', _('Other')),
-)
-
 class PhoneNumber(models.Model):
     """Phone Number model."""
     person = models.ForeignKey(Person)
-	
     phone_number = models.CharField(_('number'), max_length=50)
-    #location = models.CharField(_('location'), max_length=6,
-#				choices=PHONE_LOCATION_CHOICES, default='work')
-	
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
 	
@@ -47,19 +34,11 @@ class PhoneNumber(models.Model):
 	verbose_name = 'phone number'
 	verbose_name_plural = 'phone numbers'
 	    
-LOCATION_CHOICES = (
-    ('work', _('Work')),
-    ('person', _('Personal')),
-    ('other', _('Other'))
-)
 
 class EmailAddress(models.Model):
     person = models.ForeignKey(Person)
 	
     email_address = models.EmailField(_('email address'))
-    #location = models.CharField(_('location'), max_length=6,
-    #   choices=LOCATION_CHOICES, default='work')
-    
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_modified = models.DateTimeField(_('date modified'), auto_now=True)
     
@@ -89,8 +68,6 @@ IM_SERVICE_CHOICES = (
 class InstantMessenger(models.Model):
     person = models.ForeignKey(Person)	
     im_account = models.CharField(_('im account'), max_length=100)
-    #location = models.CharField(_('location'), max_length=6,
-#				choices=LOCATION_CHOICES, default='work')
     service = models.CharField(_('service'), max_length=11,
 			       choices=IM_SERVICE_CHOICES, default='jabber')
     
@@ -116,8 +93,6 @@ class WebSite(models.Model):
     person = models.ForeignKey(Person)
 
     url = models.URLField(_('URL'))
-    #location = models.CharField(_('location'), max_length=6,
-#				choices=LOCATION_CHOICES, default='work')
     service = models.CharField(_('service'), max_length=11,
 			       choices=WEB_SERVICE_CHOICES, default='website')
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -130,7 +105,4 @@ class WebSite(models.Model):
         db_table = 'contacts_web_sites'
 	verbose_name = _('web site')
 	verbose_name_plural = _('web sites')
-	
-    def get_absolute_url(self):
-        return u"%s?web_site=%s" % (self.person.get_absolute_url(), self.pk)
 

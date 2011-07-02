@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-02 16:10+0400\n"
+"POT-Creation-Date: 2011-07-02 16:26+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,81 +85,61 @@ msgstr "контакты"
 msgid "contacts"
 msgstr "контакты"
 
-#: contacts/models.py:24 contacts/models.py:51
-msgid "Work"
-msgstr "рабочий"
-
 #: contacts/models.py:25
-msgid "Mobile"
-msgstr "мобильный"
-
-#: contacts/models.py:26
-msgid "Fax"
-msgstr "факс"
-
-#: contacts/models.py:27
-msgid "Home"
-msgstr "домашний"
-
-#: contacts/models.py:28 contacts/models.py:53 contacts/models.py:86
-msgid "Other"
-msgstr "другой"
-
-#: contacts/models.py:35
 msgid "number"
 msgstr "номер"
 
-#: contacts/models.py:39 contacts/models.py:63 contacts/models.py:97
-#: contacts/models.py:123
+#: contacts/models.py:26 contacts/models.py:42 contacts/models.py:74
+#: contacts/models.py:98
 msgid "date added"
 msgstr "добавлено"
 
-#: contacts/models.py:40 contacts/models.py:64 contacts/models.py:98
-#: contacts/models.py:124
+#: contacts/models.py:27 contacts/models.py:43 contacts/models.py:75
+#: contacts/models.py:99
 msgid "date modified"
 msgstr "изменено"
 
-#: contacts/models.py:52
-msgid "Personal"
-msgstr "личный"
-
-#: contacts/models.py:59
+#: contacts/models.py:41
 msgid "email address"
 msgstr "email"
 
-#: contacts/models.py:91
+#: contacts/models.py:65
+msgid "Other"
+msgstr "другой"
+
+#: contacts/models.py:70
 msgid "im account"
 msgstr ""
 
-#: contacts/models.py:94 contacts/models.py:121
+#: contacts/models.py:71 contacts/models.py:96
 msgid "service"
 msgstr ""
 
-#: contacts/models.py:109
+#: contacts/models.py:86
 msgid "Web Site"
 msgstr ""
 
-#: contacts/models.py:110
+#: contacts/models.py:87
 msgid "Facebook.com"
 msgstr ""
 
-#: contacts/models.py:111
+#: contacts/models.py:88
 msgid "Vkontakte.ru"
 msgstr "ВКонтакте"
 
-#: contacts/models.py:112
+#: contacts/models.py:89
 msgid "MySpace.com"
 msgstr ""
 
-#: contacts/models.py:118
+#: contacts/models.py:95
 msgid "URL"
 msgstr ""
 
-#: contacts/models.py:131
+#: contacts/models.py:106
 msgid "web site"
 msgstr ""
 
-#: contacts/models.py:132
+#: contacts/models.py:107
 msgid "web sites"
 msgstr "сайт"
 
@@ -300,25 +280,25 @@ msgstr "скачать"
 msgid "Single Tracks"
 msgstr "Трэки"
 
-#: news/admin.py:33
+#: news/admin.py:32
 #, python-format
 msgid "%(count)d newsitem was published"
 msgid_plural "%(count)d newsitems where published"
 msgstr[0] ""
 msgstr[1] ""
 
-#: news/admin.py:36
+#: news/admin.py:35
 msgid "Publish selected news"
 msgstr "Опубликовать выделенные новости"
 
-#: news/admin.py:41
+#: news/admin.py:40
 #, python-format
 msgid "%(count)d newsitem was unpublished"
 msgid_plural "%(count)d newsitems where unpublished"
 msgstr[0] ""
 msgstr[1] ""
 
-#: news/admin.py:44
+#: news/admin.py:43
 msgid "Unpublish selected news"
 msgstr "Скрыть выделенные новости"
 
@@ -378,7 +358,7 @@ msgstr "альбом"
 
 #: photos/models.py:43
 #, fuzzy
-msgid "photo albums"
+msgid "Photo albums"
 msgstr "альбомы"
 
 #: photos/models.py:48
@@ -469,3 +449,4 @@ msgstr "Видео пока еще нет."
 #: wall/templates/wall/html5_wall.html:7
 msgid "VKontakte"
 msgstr "Вконтакте"
+

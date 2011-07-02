@@ -70,5 +70,5 @@ class Track(models.Model):
     class Meta:
         verbose_name = _('track')
         verbose_name_plural = _('tracks')
-        ordering = ('ordering',)
+        ordering = ('album__ordering', 'ordering',)
 
