@@ -6,6 +6,6 @@ from nani.admin import TranslatableAdmin
 class VideoAdmin(TranslatableAdmin):
     def queryset(self, request):
         language = self._language(request)
-        return models.Video.objects.untranslated().all()
+        return models.Video.objects.language(language).all()
 
 admin.site.register(models.Video, VideoAdmin)

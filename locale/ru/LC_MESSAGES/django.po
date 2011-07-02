@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-29 18:49+0400\n"
+"POT-Creation-Date: 2011-07-02 15:47+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,17 +27,17 @@ msgstr ""
 msgid "Russian"
 msgstr "Русский"
 
-#: biography/models.py:9 contacts/models.py:8
+#: biography/models.py:9 config4u/models.py:6 contacts/models.py:8
 msgid "name"
 msgstr "название"
 
-#: biography/models.py:10 contacts/models.py:9
+#: biography/models.py:10 config4u/models.py:7 contacts/models.py:9
 msgid "Not displayed, just for you."
-msgstr ""
+msgstr "Нигде не показывается, просто для вас"
 
-#: biography/models.py:11 contacts/models.py:10
+#: biography/models.py:11 config4u/models.py:13 contacts/models.py:10
 msgid "primary"
-msgstr ""
+msgstr "основной"
 
 #: biography/models.py:16 news/models.py:25
 msgid "Content"
@@ -61,15 +61,21 @@ msgstr "Биографии пока еще нет."
 msgid "Biography"
 msgstr "Биография"
 
-#: contacts/models.py:11 contacts/models.py:39 contacts/models.py:63
-#: contacts/models.py:97 contacts/models.py:123
-msgid "date added"
-msgstr "добавлено"
+#: config4u/models.py:9
+msgid "feedback email"
+msgstr ""
 
-#: contacts/models.py:12 contacts/models.py:40 contacts/models.py:64
-#: contacts/models.py:98 contacts/models.py:124
-msgid "date modified"
-msgstr "изменено"
+#: config4u/models.py:10
+msgid "vkontakte apiID"
+msgstr ""
+
+#: config4u/models.py:11
+msgid "displayed news"
+msgstr "новостей на главной"
+
+#: config4u/models.py:18 config4u/models.py:19
+msgid "settings"
+msgstr "настройки"
 
 #: contacts/models.py:16
 msgid "contact"
@@ -81,35 +87,45 @@ msgstr "контакты"
 
 #: contacts/models.py:24 contacts/models.py:51
 msgid "Work"
-msgstr ""
+msgstr "рабочий"
 
 #: contacts/models.py:25
 msgid "Mobile"
-msgstr ""
+msgstr "мобильный"
 
 #: contacts/models.py:26
 msgid "Fax"
-msgstr ""
+msgstr "факс"
 
 #: contacts/models.py:27
 msgid "Home"
-msgstr ""
+msgstr "домашний"
 
 #: contacts/models.py:28 contacts/models.py:53 contacts/models.py:86
 msgid "Other"
-msgstr ""
+msgstr "другой"
 
 #: contacts/models.py:35
 msgid "number"
 msgstr ""
 
+#: contacts/models.py:39 contacts/models.py:63 contacts/models.py:97
+#: contacts/models.py:123
+msgid "date added"
+msgstr "добавлено"
+
+#: contacts/models.py:40 contacts/models.py:64 contacts/models.py:98
+#: contacts/models.py:124
+msgid "date modified"
+msgstr "изменено"
+
 #: contacts/models.py:52
 msgid "Personal"
-msgstr ""
+msgstr "личный"
 
 #: contacts/models.py:59
 msgid "email address"
-msgstr ""
+msgstr "email"
 
 #: contacts/models.py:91
 msgid "im account"
@@ -129,7 +145,7 @@ msgstr ""
 
 #: contacts/models.py:111
 msgid "Vkontakte.ru"
-msgstr ""
+msgstr "ВКонтакте"
 
 #: contacts/models.py:112
 msgid "MySpace.com"
@@ -145,23 +161,23 @@ msgstr ""
 
 #: contacts/models.py:132
 msgid "web sites"
-msgstr ""
+msgstr "сайт"
 
 #: contacts/views.py:24
 msgid "Feedback from kristelle.me"
-msgstr ""
+msgstr "Сообщение с kristelle.me"
 
 #: contacts/views.py:29
 msgid "Sorry, cannot send email. Try again later."
-msgstr ""
+msgstr "Не удалосьь отправить email. Попробуйте позже."
 
 #: contacts/views.py:31
 msgid "Thank you for contacting us."
-msgstr ""
+msgstr "Спасибо за сообщение."
 
 #: contacts/views.py:33
 msgid "Thanks for empty message :)"
-msgstr ""
+msgstr "Спасибо за пустое сообщение :)"
 
 #: contacts/templates/contacts/_email_address_list.html:5
 msgid "Email Addresses"
@@ -181,75 +197,77 @@ msgstr ""
 
 #: contacts/templates/contacts/detail.html:5
 msgid "Contacts"
-msgstr ""
+msgstr "Контакты"
 
 #: contacts/templates/contacts/html5_contacts.html:42
 msgid "contact us"
-msgstr ""
+msgstr "написать нам"
 
 #: contacts/templates/contacts/html5_contacts.html:46
 msgid "submit"
-msgstr ""
+msgstr "отправить"
 
-#: music/models.py:8
+#: music/models.py:8 photos/models.py:10
 msgid "album title"
-msgstr ""
+msgstr "название альбома"
 
 #: music/models.py:11
 msgid "cover"
-msgstr ""
+msgstr "обложка"
 
 #: music/models.py:13
 msgid "zip"
-msgstr ""
+msgstr "архив"
 
 #: music/models.py:15
 msgid "zipped album"
-msgstr ""
+msgstr "заархивированный альбом (альбом целиком)"
 
-#: music/models.py:16 music/models.py:43
+#: music/models.py:16 music/models.py:43 photos/models.py:15
+#: photos/models.py:50 videos/models.py:14
 msgid "ordering"
-msgstr ""
+msgstr "порядок"
 
 #: music/models.py:17
 msgid "year"
-msgstr ""
+msgstr "год"
 
-#: music/models.py:21
+#: music/models.py:21 photos/models.py:16 photos/models.py:51
+#: videos/models.py:15
 msgid "published"
-msgstr ""
+msgstr "опубликовано"
 
 #: music/models.py:34
 msgid "album"
-msgstr ""
+msgstr "альбом"
 
 #: music/models.py:35
 msgid "albums"
 msgstr ""
 
-#: music/models.py:40
+#: music/models.py:40 videos/models.py:9
 msgid "title"
-msgstr ""
+msgstr "заголовок"
 
 #: music/models.py:41
 msgid "file"
-msgstr ""
-
-#: music/models.py:70
-msgid "track"
-msgstr ""
+msgstr "файл"
 
 #: music/models.py:71
+msgid "track"
+msgstr "трэк"
+
+#: music/models.py:72
 msgid "tracks"
-msgstr ""
+msgstr "трэки"
 
 #: music/views.py:13
 msgid "Album does not exist."
-msgstr ""
+msgstr "Альбом не существует."
 
 #: music/views.py:18
 msgid "Album has no tracks."
-msgstr ""
+msgstr "У альбома нет треков."
 
 #: music/templates/music/html5_music.html:7
 #, fuzzy
@@ -258,15 +276,15 @@ msgstr "Музыки пока еще нет."
 
 #: music/templates/music/music_album.html:16
 msgid "Tracks"
-msgstr ""
+msgstr "Трэки"
 
 #: music/templates/music/music_album.html:18
 msgid "Download this album."
-msgstr ""
+msgstr "Скачать этот альбом."
 
 #: music/templates/music/music_album.html:19
 msgid "Download album"
-msgstr ""
+msgstr "Скачать альбом."
 
 #: music/templates/music/music_album.html:31
 #: music/templates/music/single_track.html:9
@@ -316,7 +334,7 @@ msgstr "Дата публикации"
 msgid "Title"
 msgstr "Заголовок"
 
-#: news/models.py:32
+#: news/models.py:32 photos/models.py:22 videos/models.py:25
 msgid "No title"
 msgstr "Нет заголовка"
 
@@ -334,12 +352,10 @@ msgid "Music"
 msgstr "Музыка"
 
 #: news/templatetags/html5_menu.py:19 news/templatetags/html5_menu.py:20
-#: videos/templates/videos/index.html:19
 msgid "Videos"
 msgstr "Видео"
 
 #: news/templatetags/html5_menu.py:22 news/templatetags/html5_menu.py:23
-#: photos/templates/photos/index.html:5
 msgid "Photos"
 msgstr "Фото"
 
@@ -351,16 +367,39 @@ msgstr "Стена"
 msgid "Contact Us"
 msgstr "Контакты"
 
-#: photos/views.py:34 photos/views.py:55 templates/html5/photos.html:13
+#: photos/models.py:11
+msgid "description"
+msgstr "описание"
+
+#: photos/models.py:42
+#, fuzzy
+msgid "photo album"
+msgstr "Вернуться к альбомам"
+
+#: photos/models.py:43
+#, fuzzy
+msgid "photo albums"
+msgstr "Вернуться к альбомам"
+
+#: photos/models.py:48
+msgid "image"
+msgstr "изобр."
+
+#: photos/models.py:72
+#, fuzzy
+msgid "photo"
+msgstr "фото"
+
+#: photos/models.py:73 templates/html5/photos.html:13
 msgid "photos"
 msgstr "фото"
 
-#: photos/templates/photos/html5_album_photos.html:5
-#: photos/templates/photos/html5_album_photos.html:7
+#: photos/templates/photos/html5_album_photos.html:6
+#: photos/templates/photos/html5_album_photos.html:8
 msgid "Back to albums"
 msgstr "Вернуться к альбомам"
 
-#: photos/templates/photos/html5_albums.html:37
+#: photos/templates/photos/html5_albums.html:34
 msgid "No photos yet."
 msgstr "Фото пока еще нет."
 
@@ -402,7 +441,7 @@ msgstr "новости"
 msgid "music"
 msgstr "музыка"
 
-#: templates/html5/videos.html:13 videos/views.py:42
+#: templates/html5/videos.html:13 videos/models.py:42
 msgid "videos"
 msgstr "видео"
 
@@ -410,7 +449,20 @@ msgstr "видео"
 msgid "wall"
 msgstr "стена"
 
-#: videos/templates/videos/html5_videos.html:46
+#: videos/models.py:16
+msgid "embed html code"
+msgstr "embed код"
+
+#: videos/models.py:17
+msgid "preview image"
+msgstr "заставка"
+
+#: videos/models.py:41
+#, fuzzy
+msgid "video"
+msgstr "видео"
+
+#: videos/templates/videos/html5_videos.html:31
 msgid "No videos yet."
 msgstr "Видео пока еще нет."
 
