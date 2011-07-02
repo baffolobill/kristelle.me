@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-02 16:03+0400\n"
+"POT-Creation-Date: 2011-07-02 16:10+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,15 +27,15 @@ msgstr ""
 msgid "Russian"
 msgstr "Русский"
 
-#: biography/models.py:9 config4u/models.py:6 contacts/models.py:8
+#: biography/models.py:9 config4u/models.py:5 contacts/models.py:8
 msgid "name"
 msgstr "название"
 
-#: biography/models.py:10 config4u/models.py:7 contacts/models.py:9
+#: biography/models.py:10 config4u/models.py:6 contacts/models.py:9
 msgid "Not displayed, just for you."
 msgstr "Нигде не показывается, просто для вас"
 
-#: biography/models.py:11 config4u/models.py:13 contacts/models.py:10
+#: biography/models.py:11 config4u/models.py:12 contacts/models.py:10
 msgid "primary"
 msgstr "основной"
 
@@ -61,19 +61,19 @@ msgstr "Биографии пока еще нет."
 msgid "Biography"
 msgstr "Биография"
 
-#: config4u/models.py:9
+#: config4u/models.py:8
 msgid "feedback email"
 msgstr ""
 
-#: config4u/models.py:10
+#: config4u/models.py:9
 msgid "vkontakte apiID"
 msgstr ""
 
-#: config4u/models.py:11
+#: config4u/models.py:10
 msgid "displayed news"
 msgstr "новостей на главной"
 
-#: config4u/models.py:18 config4u/models.py:19
+#: config4u/models.py:17 config4u/models.py:18
 msgid "settings"
 msgstr "настройки"
 
@@ -243,7 +243,7 @@ msgstr "альбом"
 
 #: music/models.py:35
 msgid "albums"
-msgstr ""
+msgstr "альбомы"
 
 #: music/models.py:40 videos/models.py:9
 msgid "title"
