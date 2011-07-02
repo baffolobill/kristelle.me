@@ -103,10 +103,7 @@ function MadLoading(){
   <script src="{{MEDIA_URL}}js/photos.js" type="text/javascript"></script>
   <script src="{{MEDIA_URL}}js/music.js" type="text/javascript"></script>
   <script src="{{MEDIA_URL}}js/contacts.js" type="text/javascript"></script>
-{%comment%}
-  <script src="{{MEDIA_URL}}js/videojs/video.js" type="text/javascript"></script>
-  <script src="{{MEDIA_URL}}js/videos.js" type="text/javascript"></script>
-{%endcomment%}
+
   <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?32"></script>
   <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 
@@ -122,15 +119,14 @@ function FuckedIECheck(){
   return true;
 }
 
-//VideoJS.setupAllWhenReady();
-//VideoJS.DOMReady(function(){
-//  var myManyPlayers = VideoJS.setup("All");
-//});
-
 jQuery(document).ready(function($){
   WellDone = true;
   if (FuckedIECheck()){
-    $('a.video__button').colorbox({inline:true, scrolling:false});//, innerWidth:'640px', innerHeight:'480px'});
+    $('a.video__button').colorbox({
+        inline:true, 
+        scrolling:false, 
+        onComplete:function(){ $('#player-block').jPlayer('pause');  }, 
+        onClosed: function(){ $('#player-block').jPlayer('play'); } });
     $('div.jscrollpane').jScrollPane({'autoReinitialise':true});
 
     $('#wall-tabs').tabs();
