@@ -6,7 +6,7 @@ from filebrowser.fields import FileBrowseField
 
 class Video(TranslatableModel):
     translations = TranslatedFields(
-        title = models.CharField(_('title'), max_length=255),
+        title = models.CharField(_('title'), max_length=255)
         )
 
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -22,14 +22,14 @@ class Video(TranslatableModel):
     objects = TranslationManager()
 
     def __unicode__(self):
-        return self.safe_translation_getter('title', _('No title'))
+        return self.safe_translation_getter('title', unicode(_('No title')))
 
     def save(self, *args, **kwargs):
         model = self.__class__
         
         if self.ordering is None:
             try:
-                last = model.objects.order_by('-ordering')[0]
+                last = model.fallback.order_by('-ordering')[0]
                 self.ordering = last.ordering + 1
             except IndexError:
                 self.ordering = 0

@@ -19,7 +19,7 @@ class PhotoAlbum(TranslatableModel):
     fallback = TranslationFallbackManager()
 
     def __unicode__(self):
-        return self.safe_translation_getter('title', _('No title'))
+        return self.safe_translation_getter('title', unicode(_('No title')))
 
     @models.permalink
     def get_absolute_url(self):

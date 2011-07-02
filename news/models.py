@@ -29,7 +29,7 @@ class News(TranslatableModel):
     objects = TranslationManager()
 
     def __unicode__(self):
-        return self.safe_translation_getter('title', _('No title'))
+        return self.safe_translation_getter('title', unicode(_('No title')))
 
 
     class Meta:
