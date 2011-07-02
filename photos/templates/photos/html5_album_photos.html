@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load fb_versions %}
 
 <div class="clearfix photos__back">
   <a href="#back" 
@@ -6,7 +7,7 @@
      onclick="return photos.back(this);" 
      class="photos__back_button clearfix">{% trans 'Back to albums' %}</a>
 </div>
-<h3>{{album.name}}</h3>
+<h3>{{album.title}}</h3>
 {% if album.description %}<span class="clearfix">{{album.description}}</span>{% endif %}
 
 <table class="album__table clearfix">
@@ -14,11 +15,11 @@
   {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
       <div class="album__image clearfix">
-	<a href="{{item.source}}" 
+	<a href="{{item.file.url}}" 
 	   {# onclick="return photos.popup(this, '{{album.id}}');" #}
 	   class="album__image__thumb album__image__button clearfix" 
 	   rel="group{{album.id}}">
-	  <i style="background-image:url({{item.picture}});"></i>
+	  <i style="background-image:url({% version item.file.path 'small' %});"></i>
 	</a>
       </div>
     </td>

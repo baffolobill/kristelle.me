@@ -27,9 +27,11 @@ var messenger = new MessengerObject();
 
 jQuery(document).ajaxError(function(e, jqxhr, settings, exception){
 	eval("var response = "+ jqxhr.responseText);
-	if (response.message){
-	    messenger.error(response.message);
-	} else if (response.error){
-	    messenger.error(response.error);
+	if (response != null){
+	    if (response.message){
+		messenger.error(response.message);
+	    } else if (response.error){
+		messenger.error(response.error);
+	    }
 	}
     });

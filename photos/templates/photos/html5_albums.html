@@ -1,15 +1,11 @@
 {% load i18n %}
-
-{% if errors %}
-<div class="albums__errors clearfix">
-  {{errors}}
-</div>
-{% endif %}
+{% load fb_versions %}
 
 {% if albums %}
 <div id="album-photos-block" class="clearfix">
 <table id="album-photos" class="photo-albums clearfix">
 {% for album in albums %}
+  {% if album.photo_set.all %}
   {% url photos-album album.id as album_url %}
   {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
@@ -18,7 +14,7 @@
 	   onclick="return photos.get_album_photos(this, '{{album.id}}');"
 	   class="albumThumb clearfix">
 	  <span class="albumThumbWrap">
-	    <i style="background-image:url(https://graph.facebook.com/{{album.cover_photo}}/picture?type=album);"></i>
+	    <i style="background-image:url({% version album.photo_set.all.0.file.path 'small' %});"></i>
 	  </span>
 	</a>
       </div>
@@ -27,6 +23,7 @@
       </div>
     </td>
   {% if forloop.counter|divisibleby:3 %}</tr>{% endif %}
+  {% endif %}
 {% endfor %}
 {% if not albums|length|divisibleby:3 %}</tr>{% endif %}
 

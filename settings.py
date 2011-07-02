@@ -189,19 +189,6 @@ LOGGING = {
     }
 }
 
-NAVIGATION_SECTIONS = (
-    '/',
-    '/biography/',
-    '/music/',
-    '/videos/',
-    '/photos/',
-    '/wall/',
-    '/contacts/',
-)
-
-#import filebrowser
-#STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'media'),)
-
 TINYMCE_FILEBROWSER = True
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "paste,media",
@@ -219,8 +206,8 @@ TINYMCE_DEFAULT_CONFIG = {
 #FILEBROWSER_PATH_TINYMCE = STATIC_URL + "tinymce/jscripts/tiny_mce/"
 FILEBROWSER_EXTENSIONS = {
 #    'Folder':[''],
-    'Image':['.jpg', '.jpeg', '.gif','.png','.tif','.tiff', '.bmp'],
-    'Video':['.mov','.wmv','.mpeg','.mpg','.avi','.rm', '.flv'],
+    'Image':['.jpg', '.jpeg', '.png'],
+    'Video':['.mpeg','.mpg','.flv'],
 #    'Document':['.pdf','.doc','.rtf','.txt','.xls','.csv'],
     'Sound':['.mp3','.mp4',],
     'Archive': ['.zip', '.rar', '.arj', '.gz', '.tar'],

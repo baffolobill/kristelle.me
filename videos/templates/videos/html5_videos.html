@@ -1,10 +1,5 @@
 {% load i18n %}
-
-{% if errors %}
-<div class="videos__errors clearfix">
-  {{errors}}
-</div>
-{% endif %}
+{% load fb_versions %}
 
 {% if videos %}
 <table class="videos__table clearfix">
@@ -12,32 +7,17 @@
   {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
       <div class="video__cover clearfix">
-	<a href="#video-{{video.vid}}" title="{{video.title}}" 
-{#	   onclick="return videos.show(this, 'video-{{video.vid}}');" #}
+	<a href="#video-{{video.id}}" title="{{video.title}}" 
 	   class="videoThumb video__button clearfix">
-	  <i style="margin:0;background-image:url({{video.thumbnail_link}});"></i>
+	  <i style="margin:0;background-image:url({% version video.preview.path 'small' %});"></i>
 	</a>
       </div>
       <div class="video__detail clearfix">
-	<a href="#video-{{video.vid}}" title="{{video.title}}" 
-{#	   onclick="return videos.show(this, 'video-{{video.vid}}');" #}
+	<a href="#video-{{video.id}}" title="{{video.title}}" 
 	   class="photo-album__title video__button clearfix">{{video.title}}</a>
       </div>
       <div style="display: none;">
-	<div id="video-{{video.vid}}">{# class="video-js-box clearfix"> #}
-{%comment%}
-	  <video class="video-js" width="640" height="480" controls preload poster="{{video.thumbnail_link}}">
-	    <source src="{{video.src}}" type="video/mp4" />
-	    <object class="vjs-flash-fallback" width="640" height="480" type="application/x-shockwave-flash"
-		    data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-              <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
-              <param name="allowfullscreen" value="true" />
-              <param name="flashvars" value='config={"playlist":["{{video.thumbnail_link}}", {"url": "{{video.src}}","autoPlay":false,"autoBuffering":true}]}' />
-              <img src="{{video.thumbnail_link}}" width="640" height="480" alt="{{video.title}}"
-		   title="No video playback capabilities." />
-	    </object>
-	  </video>
-{%endcomment%}
+	<div id="video-{{video.id}}">{# class="video-js-box clearfix"> #}
 	  {{video.embed_html|safe}}
 	</div>
       </div>

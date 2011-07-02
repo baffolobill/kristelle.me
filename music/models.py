@@ -66,6 +66,7 @@ class Track(models.Model):
                 self.ordering = 0
 
         return super(Track, self).save(*args, **kwargs)
+
     class Meta:
         verbose_name = _('track')
         verbose_name_plural = _('tracks')
