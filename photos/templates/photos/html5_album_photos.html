@@ -15,7 +15,7 @@
   {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
     <td>
       <div class="album__image clearfix">
-	<a href="{% version item.file.path 'medium' %}" 
+	<a href="{% version item.file.path 'large' %}" 
 	   {# onclick="return photos.popup(this, '{{album.id}}');" #}
 	   class="album__image__thumb album__image__button clearfix" 
 	   rel="group{{album.id}}">
