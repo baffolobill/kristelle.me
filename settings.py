@@ -2,6 +2,7 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+ENABLED = False
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),

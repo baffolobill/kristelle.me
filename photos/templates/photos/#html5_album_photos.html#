@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load fb_versions %}
+
+<div class="clearfix photos__back">
+  <a href="#back" 
+     title="{% trans 'Back to albums' %}"
+     onclick="return photos.back(this);" 
+     class="photos__back_button clearfix">{% trans 'Back to albums' %}</a>
+</div>
+<h3>{{album.title}}</h3>
+{% if album.description %}<span class="clearfix">{{album.description}}</span>{% endif %}
+
+<table class="album__table clearfix">
+{% for item in images %}
+  {% if forloop.counter0|divisibleby:3 %}<tr>{% endif %}
+    <td>
+      <div class="album__image clearfix">
+	<a href="{% version item.file.path 'largeex' %}" 
+	   {# onclick="return photos.popup(this, '{{album.id}}');" #}
+	   class="album__image__thumb album__image__button clearfix" 
+	   rel="group{{album.id}}">
+	  <i style="background-image:url({% version item.file.path 'small' %});"></i>
+	</a>
+      </div>
+    </td>
+  {% if forloop.counter|divisibleby:3 %}</tr>{% endif %}
+{% endfor %}
+{% if not album|length|divisibleby:3 %}</tr>{% endif %}
+</table>
